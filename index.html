@@ -1,0 +1,1774 @@
+ <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#153F3C">
+  <meta name="description" content="Agenda inteligente para gestión de proyectos y tareas">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Mi Agenda">
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <title>Mi Agenda</title>
+
+  <link rel="manifest" href="data:application/json;base64,eyJuYW1lIjogIk1pIEFnZW5kYSIsICJzaG9ydF9uYW1lIjogIkFnZW5kYSIsICJkZXNjcmlwdGlvbiI6ICJBZ2VuZGEgaW50ZWxpZ2VudGUgcGFyYSBnZXN0acOzbiBkZSBwcm95ZWN0b3MgeSB0YXJlYXMiLCAic3RhcnRfdXJsIjogIi4iLCAiZGlzcGxheSI6ICJzdGFuZGFsb25lIiwgImJhY2tncm91bmRfY29sb3IiOiAiI0Y1RjVGMSIsICJ0aGVtZV9jb2xvciI6ICIjMTUzRjNDIiwgIm9yaWVudGF0aW9uIjogInBvcnRyYWl0IiwgImljb25zIjogW3sic3JjIjogImRhdGE6aW1hZ2Uvc3ZnK3htbDtiYXNlNjQsUEhOMlp5QjRiV3h1Y3owaWFIUjBjRG92TDNkM2R5NTNNeTV2Y21jdk1qQXdNQzl6ZG1jaUlIWnBaWGRDYjNnOUlqQWdNQ0F4T1RJZ01Ua3lJajRLSUNBOGNtVmpkQ0IzYVdSMGFEMGlNVGt5SWlCb1pXbG5hSFE5SWpFNU1pSWdjbmc5SWpNeUlpQm1hV3hzUFNJak1VWTFRelUzSWk4K0NpQWdQSEpsWTNRZ2VEMGlNeklpSUhrOUlqVTJJaUIzYVdSMGFEMGlNVEk0SWlCb1pXbG5hSFE5SWpFd09DSWdjbmc5SWpFeUlpQm1hV3hzUFNJalJrWkdSa1pHSWk4K0NpQWdQSEpsWTNRZ2VEMGlNeklpSUhrOUlqVTJJaUIzYVdSMGFEMGlNVEk0SWlCb1pXbG5hSFE5SWpJNElpQnllRDBpTVRJaUlHWnBiR3c5SWlORk0wVkZSVU1pTHo0S0lDQThjbVZqZENCNFBTSXpNaUlnZVQwaU56WWlJSGRwWkhSb1BTSXhNamdpSUdobGFXZG9kRDBpT0NJZ1ptbHNiRDBpSXpGR05VTTFOeUl2UGdvZ0lEeHlaV04wSUhnOUlqVXlJaUI1UFNJME1DSWdkMmxrZEdnOUlqRXlJaUJvWldsbmFIUTlJakk0SWlCeWVEMGlOaUlnWm1sc2JEMGlJME01T0VFeVF5SXZQZ29nSUR4eVpXTjBJSGc5SWpFeU9DSWdlVDBpTkRBaUlIZHBaSFJvUFNJeE1pSWdhR1ZwWjJoMFBTSXlPQ0lnY25nOUlqWWlJR1pwYkd3OUlpTkRPVGhCTWtNaUx6NEtJQ0E4WTJseVkyeGxJR040UFNJMk9DSWdZM2s5SWpFeE1DSWdjajBpT0NJZ1ptbHNiRDBpSXpGR05VTTFOeUl2UGdvZ0lEeGphWEpqYkdVZ1kzZzlJamsySWlCamVUMGlNVEV3SWlCeVBTSTRJaUJtYVd4c1BTSWpNVVkxUXpVM0lpOCtDaUFnUEdOcGNtTnNaU0JqZUQwaU1USTBJaUJqZVQwaU1URXdJaUJ5UFNJNElpQm1hV3hzUFNJak1VWTFRelUzSWk4K0NpQWdQR05wY21Oc1pTQmplRDBpTmpnaUlHTjVQU0l4TXpZaUlISTlJamdpSUdacGJHdzlJaU14UmpWRE5UY2lMejRLSUNBOFkybHlZMnhsSUdONFBTSTVOaUlnWTNrOUlqRXpOaUlnY2owaU9DSWdabWxzYkQwaUl6RkdOVU0xTnlJdlBnbzhMM04yWno0PSIsICJzaXplcyI6ICIxOTJ4MTkyIiwgInR5cGUiOiAiaW1hZ2Uvc3ZnK3htbCJ9LCB7InNyYyI6ICJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBITjJaeUI0Yld4dWN6MGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TUM5emRtY2lJSFpwWlhkQ2IzZzlJakFnTUNBeE9USWdNVGt5SWo0S0lDQThjbVZqZENCM2FXUjBhRDBpTVRreUlpQm9aV2xuYUhROUlqRTVNaUlnY25nOUlqTXlJaUJtYVd4c1BTSWpNVVkxUXpVM0lpOCtDaUFnUEhKbFkzUWdlRDBpTXpJaUlIazlJalUySWlCM2FXUjBhRDBpTVRJNElpQm9aV2xuYUhROUlqRXdPQ0lnY25nOUlqRXlJaUJtYVd4c1BTSWpSa1pHUmtaR0lpOCtDaUFnUEhKbFkzUWdlRDBpTXpJaUlIazlJalUySWlCM2FXUjBhRDBpTVRJNElpQm9aV2xuYUhROUlqSTRJaUJ5ZUQwaU1USWlJR1pwYkd3OUlpTkZNMFZGUlVNaUx6NEtJQ0E4Y21WamRDQjRQU0l6TWlJZ2VUMGlOellpSUhkcFpIUm9QU0l4TWpnaUlHaGxhV2RvZEQwaU9DSWdabWxzYkQwaUl6RkdOVU0xTnlJdlBnb2dJRHh5WldOMElIZzlJalV5SWlCNVBTSTBNQ0lnZDJsa2RHZzlJakV5SWlCb1pXbG5hSFE5SWpJNElpQnllRDBpTmlJZ1ptbHNiRDBpSTBNNU9FRXlReUl2UGdvZ0lEeHlaV04wSUhnOUlqRXlPQ0lnZVQwaU5EQWlJSGRwWkhSb1BTSXhNaUlnYUdWcFoyaDBQU0l5T0NJZ2NuZzlJallpSUdacGJHdzlJaU5ET1RoQk1rTWlMejRLSUNBOFkybHlZMnhsSUdONFBTSTJPQ0lnWTNrOUlqRXhNQ0lnY2owaU9DSWdabWxzYkQwaUl6RkdOVU0xTnlJdlBnb2dJRHhqYVhKamJHVWdZM2c5SWprMklpQmplVDBpTVRFd0lpQnlQU0k0SWlCbWFXeHNQU0lqTVVZMVF6VTNJaTgrQ2lBZ1BHTnBjbU5zWlNCamVEMGlNVEkwSWlCamVUMGlNVEV3SWlCeVBTSTRJaUJtYVd4c1BTSWpNVVkxUXpVM0lpOCtDaUFnUEdOcGNtTnNaU0JqZUQwaU5qZ2lJR041UFNJeE16WWlJSEk5SWpnaUlHWnBiR3c5SWlNeFJqVkROVGNpTHo0S0lDQThZMmx5WTJ4bElHTjRQU0k1TmlJZ1kzazlJakV6TmlJZ2NqMGlPQ0lnWm1sc2JEMGlJekZHTlVNMU55SXZQZ284TDNOMlp6ND0iLCAic2l6ZXMiOiAiNTEyeDUxMiIsICJ0eXBlIjogImltYWdlL3N2Zyt4bWwifV19">
+  <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOTIgMTkyIj4KICA8cmVjdCB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgcng9IjMyIiBmaWxsPSIjMUY1QzU3Ii8+CiAgPHJlY3QgeD0iMzIiIHk9IjU2IiB3aWR0aD0iMTI4IiBoZWlnaHQ9IjEwOCIgcng9IjEyIiBmaWxsPSIjRkZGRkZGIi8+CiAgPHJlY3QgeD0iMzIiIHk9IjU2IiB3aWR0aD0iMTI4IiBoZWlnaHQ9IjI4IiByeD0iMTIiIGZpbGw9IiNFM0VFRUMiLz4KICA8cmVjdCB4PSIzMiIgeT0iNzYiIHdpZHRoPSIxMjgiIGhlaWdodD0iOCIgZmlsbD0iIzFGNUM1NyIvPgogIDxyZWN0IHg9IjUyIiB5PSI0MCIgd2lkdGg9IjEyIiBoZWlnaHQ9IjI4IiByeD0iNiIgZmlsbD0iI0M5OEEyQyIvPgogIDxyZWN0IHg9IjEyOCIgeT0iNDAiIHdpZHRoPSIxMiIgaGVpZ2h0PSIyOCIgcng9IjYiIGZpbGw9IiNDOThBMkMiLz4KICA8Y2lyY2xlIGN4PSI2OCIgY3k9IjExMCIgcj0iOCIgZmlsbD0iIzFGNUM1NyIvPgogIDxjaXJjbGUgY3g9Ijk2IiBjeT0iMTEwIiByPSI4IiBmaWxsPSIjMUY1QzU3Ii8+CiAgPGNpcmNsZSBjeD0iMTI0IiBjeT0iMTEwIiByPSI4IiBmaWxsPSIjMUY1QzU3Ii8+CiAgPGNpcmNsZSBjeD0iNjgiIGN5PSIxMzYiIHI9IjgiIGZpbGw9IiMxRjVDNTciLz4KICA8Y2lyY2xlIGN4PSI5NiIgY3k9IjEzNiIgcj0iOCIgZmlsbD0iIzFGNUM1NyIvPgo8L3N2Zz4=">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body, #root { height: 100%; overflow-x: hidden; }
+    body { background: #F5F5F1; font-family: Inter, sans-serif; -webkit-tap-highlight-color: transparent; }
+    ::-webkit-scrollbar { width: 0; height: 0; }
+  </style>
+
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<base target="_blank">
+</head>
+<body>
+  <div id="root"></div>
+
+  <script>
+    (function() {
+      const swCode = `const CACHE_NAME = 'mi-agenda-v1';
+const URLS_TO_CACHE = ['./'];
+
+self.addEventListener('install', (event) => {
+  event.waitUntil(
+    caches.open(CACHE_NAME).then((cache) => cache.addAll(URLS_TO_CACHE))
+  );
+  self.skipWaiting();
+});
+
+self.addEventListener('activate', (event) => {
+  event.waitUntil(self.clients.claim());
+});
+
+self.addEventListener('fetch', (event) => {
+  event.respondWith(
+    caches.match(event.request).then((response) => {
+      if (response) return response;
+      return fetch(event.request).catch(() => {
+        if (event.request.mode === 'navigate') {
+          return caches.match('./');
+        }
+      });
+    })
+  );
+});
+`;
+      const swBlob = new Blob([swCode], { type: 'application/javascript' });
+      const swUrl = URL.createObjectURL(swBlob);
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register(swUrl).catch(() => {});
+        });
+      }
+    })();
+  </script>
+
+  <script type="text/babel" data-type="module">
+const { useState, useEffect, useMemo, useRef, useCallback } = React;
+
+const Home = ({size=24, color="currentColor", style, ...props}) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={style} {...props}>
+    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+  </svg>
+);
+const CalendarDays = ({size=24, color="currentColor", style, ...props}) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={style} {...props}>
+    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/>
+  </svg>
+);
+const FolderKanban = ({size=24, color="currentColor", style, ...props}) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={style} {...props}>
+    <path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z"/><line x1="8" y1="10" x2="8" y2="16"/><line x1="12" y1="10" x2="12" y2="16"/><line x1="16" y1="10" x2="16" y2="16"/>
+  </svg>
+);
+const Tag = ({size=24, color="currentColor", style, ...props}) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={style} {...props}>
+    <path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/><path d="M7 7h.01"/>
+  </svg>
+);
+const BarChart3 = ({size=24, color="currentColor", style, ...props}) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={style} {...props}>
+    <path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/>
+  </svg>
+);
+const Search = ({size=24, color="currentColor", style, ...props}) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={style} {...props}>
+    <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+  </svg>
+);
+const Settings = ({size=24, color="currentColor", style, ...props}) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={style} {...props}>
+    <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/>
+  </svg>
+);
+const Plus = ({size=24, color="currentColor", style, ...props}) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={style} {...props}>
+    <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+  </svg>
+);
+const X = ({size=24, color="currentColor", style, ...props}) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={style} {...props}>
+    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+  </svg>
+);
+const Check = ({size=24, color="currentColor", style, ...props}) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={style} {...props}>
+    <polyline points="20 6 9 17 4 12"/>
+  </svg>
+);
+const Clock = ({size=24, color="currentColor", style, ...props}) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={style} {...props}>
+    <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+  </svg>
+);
+const MapPin = ({size=24, color="currentColor", style, ...props}) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={style} {...props}>
+    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
+  </svg>
+);
+const LinkIcon = ({size=24, color="currentColor", style, ...props}) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={style} {...props}>
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+  </svg>
+);
+const Phone = ({size=24, color="currentColor", style, ...props}) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={style} {...props}>
+    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+  </svg>
+);
+const Mail = ({size=24, color="currentColor", style, ...props}) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={style} {...props}>
+    <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+  </svg>
+);
+const ChevronLeft = ({size=24, color="currentColor", style, ...props}) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={style} {...props}>
+    <path d="m15 18-6-6 6-6"/>
+  </svg>
+);
+const ChevronRight = ({size=24, color="currentColor", style, ...props}) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={style} {...props}>
+    <path d="m9 18 6-6-6-6"/>
+  </svg>
+);
+const AlertTriangle = ({size=24, color="currentColor", style, ...props}) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={style} {...props}>
+    <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/>
+  </svg>
+);
+const Trash2 = ({size=24, color="currentColor", style, ...props}) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={style} {...props}>
+    <path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/>
+  </svg>
+);
+const Pencil = ({size=24, color="currentColor", style, ...props}) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={style} {...props}>
+    <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/>
+  </svg>
+);
+const Paperclip = ({size=24, color="currentColor", style, ...props}) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={style} {...props}>
+    <path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/>
+  </svg>
+);
+const Lock = ({size=24, color="currentColor", style, ...props}) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={style} {...props}>
+    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+  </svg>
+);
+const Users = ({size=24, color="currentColor", style, ...props}) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={style} {...props}>
+    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+  </svg>
+);
+const ListChecks = ({size=24, color="currentColor", style, ...props}) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={style} {...props}>
+    <path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/>
+  </svg>
+);
+const CalendarClock = ({size=24, color="currentColor", style, ...props}) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={style} {...props}>
+    <path d="M21 7.5V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3.5"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h5"/><path d="M17.5 17.5 16 16.3V14"/><circle cx="16" cy="16" r="6"/>
+  </svg>
+);
+const Sparkles = ({size=24, color="currentColor", style, ...props}) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={style} {...props}>
+    <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/>
+  </svg>
+);
+const ChevronDown = ({size=24, color="currentColor", style, ...props}) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={style} {...props}>
+    <path d="m6 9 6 6 6-6"/>
+  </svg>
+);
+const Video = ({size=24, color="currentColor", style, ...props}) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={style} {...props}>
+    <path d="m22 8-6 4 6 4V8Z"/><rect x="2" y="6" width="14" height="12" rx="2"/>
+  </svg>
+);
+const Building2 = ({size=24, color="currentColor", style, ...props}) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={style} {...props}>
+    <path d="M10 12h4"/><path d="M10 8h4"/><path d="M14 21v-3a2 2 0 0 0-4 0v3"/><path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"/><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"/>
+  </svg>
+);
+const GripVertical = ({size=24, color="currentColor", style, ...props}) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={style} {...props}>
+    <circle cx="9" cy="12" r="1"/><circle cx="9" cy="5" r="1"/><circle cx="9" cy="19" r="1"/><circle cx="15" cy="12" r="1"/><circle cx="15" cy="5" r="1"/><circle cx="15" cy="19" r="1"/>
+  </svg>
+);
+const ArrowRight = ({size=24, color="currentColor", style, ...props}) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={style} {...props}>
+    <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+  </svg>
+);
+
+/* ============================================================
+   TOKENS
+   ============================================================ */
+const FONT_IMPORT = "@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');";
+
+const C = {
+  bg: "#F5F5F1",
+  paper: "#FFFFFF",
+  ink: "#1E2A2E",
+  ink2: "#5B6B6E",
+  ink3: "#8B9A9C",
+  line: "#E4E3DC",
+  teal: "#1F5C57",
+  tealDark: "#153F3C",
+  tealSoft: "#E3EEEC",
+  mustard: "#C98A2C",
+  mustardSoft: "#F6E9D3",
+  alta: "#C5432F",
+  altaSoft: "#F6DFD9",
+  media: "#C99A2E",
+  mediaSoft: "#F5EAD1",
+  baja: "#3D8A63",
+  bajaSoft: "#DDEEE3",
+};
+
+const CAT_ICONS = { Trabajo: Building2, Salud: Sparkles, Familia: Users, Proyecto: FolderKanban, "Personas cuidadoras": Users, Eventos: CalendarDays, Personal: Home, Administrativo: ListChecks };
+
+const DEFAULT_CATEGORIES = [
+  { id: "cat-trabajo", name: "Trabajo", color: "#1F5C57", icon: "Trabajo" },
+  { id: "cat-salud", name: "Salud", color: "#C5432F", icon: "Salud" },
+  { id: "cat-familia", name: "Familia", color: "#C98A2C", icon: "Familia" },
+  { id: "cat-proyecto", name: "Proyecto", color: "#3D6FA6", icon: "Proyecto" },
+  { id: "cat-cuidadoras", name: "Personas cuidadoras", color: "#8B4B8C", icon: "Personas cuidadoras" },
+  { id: "cat-eventos", name: "Eventos", color: "#3D8A63", icon: "Eventos" },
+  { id: "cat-personal", name: "Personal", color: "#5B6B6E", icon: "Personal" },
+  { id: "cat-admin", name: "Administrativo", color: "#8B7355", icon: "Administrativo" },
+];
+
+const PRIORITIES = { alta: { label: "Alta", color: C.alta, soft: C.altaSoft, dot: "🟥" }, media: { label: "Media", color: C.media, soft: C.mediaSoft, dot: "🟨" }, baja: { label: "Baja", color: C.baja, soft: C.bajaSoft, dot: "🟩" } };
+const STATUSES = { pendiente: { label: "Pendiente", color: C.ink2 }, en_proceso: { label: "En proceso", color: C.mustard }, finalizada: { label: "Finalizada", color: C.baja } };
+const REPEATS = { ninguna: "No se repite", diaria: "Diaria", semanal: "Semanal", mensual: "Mensual", anual: "Anual" };
+const WEEKDAYS = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+const MONTHS = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+const WORK_DAY_MIN = 12 * 60;
+
+const REMINDER_PRESETS = [
+  { label: "1 día antes", minutes: 1440 },
+  { label: "3 horas antes", minutes: 180 },
+  { label: "1 hora antes", minutes: 60 },
+  { label: "30 min antes", minutes: 30 },
+  { label: "15 min antes", minutes: 15 },
+  { label: "5 min antes", minutes: 5 },
+  { label: "Hora exacta", minutes: 0 },
+];
+function reminderLabel(minutes) {
+  const preset = REMINDER_PRESETS.find((p) => p.minutes === minutes);
+  if (preset) return preset.label;
+  if (minutes % 1440 === 0) return `${minutes / 1440} día${minutes / 1440 > 1 ? "s" : ""} antes`;
+  if (minutes % 60 === 0) return `${minutes / 60} h antes`;
+  return `${minutes} min antes`;
+}
+
+/* ============================================================
+   HELPERS
+   ============================================================ */
+const uid = () => Math.random().toString(36).slice(2, 10) + Date.now().toString(36).slice(-4);
+const pad = (n) => String(n).padStart(2, "0");
+const toISODate = (d) => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+const todayISO = () => toISODate(new Date());
+const addDays = (iso, n) => { const d = new Date(iso + "T00:00:00"); d.setDate(d.getDate() + n); return toISODate(d); };
+const fmtDateLong = (iso) => { if (!iso) return ""; const d = new Date(iso + "T00:00:00"); return `${WEEKDAYS[d.getDay()]} ${d.getDate()} de ${MONTHS[d.getMonth()]}`; };
+const fmtDateShort = (iso) => { if (!iso) return ""; const d = new Date(iso + "T00:00:00"); return `${d.getDate()} ${MONTHS[d.getMonth()].slice(0, 3)}`; };
+const minutesBetween = (start, end) => { if (!start || !end) return 0; const [sh, sm] = start.split(":").map(Number); const [eh, em] = end.split(":").map(Number); return Math.max(0, (eh * 60 + em) - (sh * 60 + sm)); };
+const durationLabel = (min) => { if (!min) return "—"; const h = Math.floor(min / 60), m = min % 60; return h ? `${h}h${m ? " " + m + "m" : ""}` : `${m}m`; };
+const nowHHMM = () => { const d = new Date(); return `${pad(d.getHours())}:${pad(d.getMinutes())}`; };
+const fmtTime12 = (hhmm) => {
+  if (!hhmm) return "";
+  const [hStr, mStr] = hhmm.split(":");
+  let h = parseInt(hStr, 10);
+  if (Number.isNaN(h)) return hhmm;
+  const period = h >= 12 ? "p.m." : "a.m.";
+  h = h % 12; if (h === 0) h = 12;
+  return `${h}:${mStr || "00"} ${period}`;
+};
+
+function taskProgress(t) {
+  if (t.subtasks && t.subtasks.length) {
+    const sum = t.subtasks.reduce((a, s) => a + (s.status === "finalizada" ? 100 : Number(s.progress) || 0), 0);
+    return Math.round(sum / t.subtasks.length);
+  }
+  return t.status === "finalizada" ? 100 : t.status === "en_proceso" ? 50 : 0;
+}
+function isOverdue(t) { return t.date && t.date < todayISO() && t.status !== "finalizada"; }
+function isBlocked(t, allTasks) {
+  if (!t.dependsOn || !t.dependsOn.length) return false;
+  return t.dependsOn.some((id) => { const dep = allTasks.find((x) => x.id === id); return dep && dep.status !== "finalizada"; });
+}
+
+function taskDateTimeMs(task) {
+  if (!task.date) return null;
+  const time = task.startTime || "00:00";
+  const d = new Date(`${task.date}T${time}:00`);
+  return Number.isNaN(d.getTime()) ? null : d.getTime();
+}
+function fmtCountdown(targetMs) {
+  const diff = targetMs - Date.now();
+  if (diff <= 0) return "ahora";
+  const mins = Math.round(diff / 60000);
+  if (mins < 1) return "en menos de 1 min";
+  if (mins < 60) return `en ${mins} min`;
+  const hours = Math.floor(mins / 60), rem = mins % 60;
+  if (hours < 24) return `en ${hours} h${rem ? ` ${rem} min` : ""}`;
+  const days = Math.floor(hours / 24);
+  return `en ${days} día${days > 1 ? "s" : ""}`;
+}
+function getUpcomingReminderTriggers(tasks, graceMs = 5 * 60000) {
+  const now = Date.now();
+  const out = [];
+  tasks.forEach((t) => {
+    if (t.status === "finalizada") return;
+    const base = taskDateTimeMs(t);
+    if (base == null) return;
+    (t.reminders || []).forEach((r) => {
+      const trigger = base - r.minutes * 60000;
+      if (trigger >= now - graceMs) out.push({ task: t, reminder: r, trigger });
+    });
+  });
+  out.sort((a, b) => a.trigger - b.trigger);
+  return out;
+}
+
+/* Very small natural-language quick-add parser (Spanish) */
+function parseQuickAdd(text) {
+  let title = text.trim();
+  let date = todayISO();
+  let startTime = "";
+  const lower = title.toLowerCase();
+
+  const wdMap = { domingo: 0, lunes: 1, martes: 2, "miércoles": 3, miercoles: 3, jueves: 4, viernes: 5, "sábado": 6, sabado: 6 };
+  if (/\bmañana\b/.test(lower) && !/de la mañana/.test(lower)) {
+    date = addDays(todayISO(), 1);
+    title = title.replace(/\bmañana\b/i, "").trim();
+  } else if (/\bhoy\b/.test(lower)) {
+    title = title.replace(/\bhoy\b/i, "").trim();
+  } else {
+    for (const [name, idx] of Object.entries(wdMap)) {
+      const re = new RegExp(`el ${name}|\\b${name}\\b`, "i");
+      if (re.test(lower)) {
+        const d = new Date();
+        let diff = (idx - d.getDay() + 7) % 7;
+        if (diff === 0) diff = 7;
+        date = addDays(todayISO(), diff);
+        title = title.replace(new RegExp(`el ${name}`, "i"), "").replace(new RegExp(`\\b${name}\\b`, "i"), "").trim();
+        break;
+      }
+    }
+  }
+
+  const timeMatch = lower.match(/(\d{1,2})(:(\d{2}))?\s*(am|pm)/);
+  const wordTimeMatch = lower.match(/a las (\w+)( y (\w+))? de la (mañana|tarde|noche)/);
+  if (timeMatch) {
+    let h = parseInt(timeMatch[1], 10);
+    const m = timeMatch[3] ? parseInt(timeMatch[3], 10) : 0;
+    if (timeMatch[4] === "pm" && h < 12) h += 12;
+    if (timeMatch[4] === "am" && h === 12) h = 0;
+    startTime = `${pad(h)}:${pad(m)}`;
+    title = title.replace(timeMatch[0], "").trim();
+  } else if (wordTimeMatch) {
+    const numWords = { una: 1, uno: 1, dos: 2, tres: 3, cuatro: 4, cinco: 5, seis: 6, siete: 7, ocho: 8, nueve: 9, diez: 10, once: 11, doce: 12 };
+    let h = numWords[wordTimeMatch[1]] || null;
+    if (h) {
+      if (wordTimeMatch[4] === "tarde" && h < 12) h += 12;
+      if (wordTimeMatch[4] === "noche" && h < 12) h += 12;
+      startTime = `${pad(h)}:00`;
+      title = title.replace(wordTimeMatch[0], "").trim();
+    }
+  }
+
+  title = title.replace(/^(crear|agendar|programar)\s+/i, "").replace(/\s+/g, " ").trim();
+  title = title.replace(/^[,\-–]\s*/, "").replace(/\s*[,\-–]\s*$/, "");
+  title = title.charAt(0).toUpperCase() + title.slice(1);
+  return { title: title || text, date, startTime };
+}
+
+/* ============================================================
+   STORAGE
+   ============================================================ */
+const STORE_KEY = "mi-agenda:data:v1";
+async function loadData() {
+  try {
+    const res = await window.storage.get(STORE_KEY, false);
+    if (res && res.value) return JSON.parse(res.value);
+  } catch (e) { /* first run */ }
+  return null;
+}
+async function saveData(data) {
+  try { await window.storage.set(STORE_KEY, JSON.stringify(data), false); } catch (e) { console.error("No se pudo guardar", e); }
+}
+
+/* ============================================================
+   PRIMITIVES
+   ============================================================ */
+function useIsMobile(breakpoint = 820) {
+  const [isMobile, setIsMobile] = useState(() => (typeof window !== "undefined" ? window.innerWidth <= breakpoint : false));
+  useEffect(() => {
+    const onResize = () => setIsMobile(window.innerWidth <= breakpoint);
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, [breakpoint]);
+  return isMobile;
+}
+
+function Card({ children, style, className = "", onClick }) {
+  return (
+    <div onClick={onClick} className={className} style={{ background: C.paper, border: `1px solid ${C.line}`, borderRadius: 18, ...style }}>
+      {children}
+    </div>
+  );
+}
+
+function Pill({ children, color, soft, style }) {
+  return (
+    <span style={{ display: "inline-flex", alignItems: "center", gap: 6, fontSize: 12.5, fontWeight: 600, color, background: soft, padding: "4px 10px", borderRadius: 999, ...style }}>
+      {children}
+    </span>
+  );
+}
+
+function Btn({ children, onClick, variant = "primary", style, type = "button", disabled }) {
+  const base = { fontFamily: "Inter, sans-serif", fontWeight: 600, fontSize: 14.5, borderRadius: 12, padding: "10px 16px", display: "inline-flex", alignItems: "center", gap: 8, cursor: disabled ? "not-allowed" : "pointer", border: "none", transition: "opacity .15s", opacity: disabled ? 0.5 : 1, touchAction: "manipulation", WebkitTapHighlightColor: "transparent" };
+  const variants = {
+    primary: { background: C.teal, color: "#fff" },
+    ghost: { background: "transparent", color: C.ink2, border: `1px solid ${C.line}` },
+    danger: { background: C.altaSoft, color: C.alta },
+    subtle: { background: C.tealSoft, color: C.tealDark },
+  };
+  return <button type={type} disabled={disabled} onClick={onClick} style={{ ...base, ...variants[variant], ...style }}>{children}</button>;
+}
+
+function Field({ label, children, full }) {
+  return (
+    <label style={{ display: "flex", flexDirection: "column", gap: 6, gridColumn: full ? "1 / -1" : undefined }}>
+      <span style={{ fontSize: 12.5, fontWeight: 600, color: C.ink2, letterSpacing: ".01em" }}>{label}</span>
+      {children}
+    </label>
+  );
+}
+
+const inputStyle = { fontFamily: "Inter, sans-serif", fontSize: 16, padding: "12px 12px", borderRadius: 10, border: `1px solid ${C.line}`, color: C.ink, background: "#FBFBF9", outline: "none", width: "100%" };
+
+function TextInput(props) { return <input {...props} style={{ ...inputStyle, ...(props.style || {}) }} />; }
+function TextArea(props) { return <textarea {...props} style={{ ...inputStyle, resize: "vertical", minHeight: 70, ...(props.style || {}) }} />; }
+function Select({ children, ...props }) { return <select {...props} style={{ ...inputStyle, ...(props.style || {}) }}>{children}</select>; }
+
+/* Signature element: the Day Ring — two concentric arcs (ocupación / avance) */
+function DayRing({ occupancy, progress, size = 128 }) {
+  const stroke = 10;
+  const r = (size - stroke) / 2;
+  const r2 = r - stroke - 4;
+  const circ = 2 * Math.PI * r;
+  const circ2 = 2 * Math.PI * r2;
+  return (
+    <div style={{ position: "relative", width: size, height: size, flexShrink: 0 }}>
+      <svg width={size} height={size} style={{ transform: "rotate(-90deg)" }}>
+        <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke={C.line} strokeWidth={stroke} />
+        <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke={C.mustard} strokeWidth={stroke} strokeDasharray={circ} strokeDashoffset={circ - (Math.min(occupancy, 100) / 100) * circ} strokeLinecap="round" style={{ transition: "stroke-dashoffset .5s" }} />
+        <circle cx={size / 2} cy={size / 2} r={r2} fill="none" stroke={C.line} strokeWidth={stroke} />
+        <circle cx={size / 2} cy={size / 2} r={r2} fill="none" stroke={C.teal} strokeWidth={stroke} strokeDasharray={circ2} strokeDashoffset={circ2 - (Math.min(progress, 100) / 100) * circ2} strokeLinecap="round" style={{ transition: "stroke-dashoffset .5s" }} />
+      </svg>
+      <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
+        <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 20, fontWeight: 600, color: C.ink }}>{progress}%</span>
+        <span style={{ fontSize: 10, color: C.ink3, fontWeight: 600, letterSpacing: ".03em" }}>AVANCE</span>
+      </div>
+    </div>
+  );
+}
+
+function ProgressBar({ value, color = C.teal, height = 6 }) {
+  return (
+    <div style={{ width: "100%", height, background: C.line, borderRadius: 99, overflow: "hidden" }}>
+      <div style={{ width: `${Math.min(100, Math.max(0, value))}%`, height: "100%", background: color, transition: "width .3s" }} />
+    </div>
+  );
+}
+
+function Empty({ icon: Icon, title, hint }) {
+  return (
+    <div style={{ textAlign: "center", padding: "48px 20px", color: C.ink3 }}>
+      <Icon size={30} style={{ marginBottom: 10, opacity: .6 }} />
+      <div style={{ fontFamily: "'Fraunces', serif", fontSize: 18, color: C.ink2, marginBottom: 4 }}>{title}</div>
+      {hint && <div style={{ fontSize: 13.5 }}>{hint}</div>}
+    </div>
+  );
+}
+
+/* ============================================================
+   TASK CARD
+   ============================================================ */
+function TaskCard({ task, categories, projects, tasks, onOpen, onQuickStatus }) {
+  const p = PRIORITIES[task.priority] || PRIORITIES.media;
+  const cats = (task.categoryIds || []).map((id) => categories.find((c) => c.id === id)).filter(Boolean);
+  const project = projects.find((pr) => pr.id === task.projectId);
+  const progress = taskProgress(task);
+  const overdue = isOverdue(task);
+  const blocked = isBlocked(task, tasks);
+
+  return (
+    <Card onClick={() => onOpen(task)} style={{ padding: 16, cursor: "pointer", borderLeft: `4px solid ${task.color || p.color}` }}>
+      <div style={{ display: "flex", justifyContent: "space-between", gap: 10 }}>
+        <div style={{ flex: 1, minWidth: 0 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap", marginBottom: 6 }}>
+            <Pill color={p.color} soft={p.soft}>{p.dot} {p.label}</Pill>
+            <Pill color={STATUSES[task.status].color} soft={C.bg}>{STATUSES[task.status].label}</Pill>
+            {overdue && <Pill color={C.alta} soft={C.altaSoft}><AlertTriangle size={12} /> Vencida</Pill>}
+            {blocked && <Pill color={C.ink2} soft={C.line}><Lock size={12} /> Bloqueada</Pill>}
+          </div>
+          <div style={{ fontFamily: "'Fraunces', serif", fontSize: 17, fontWeight: 600, color: C.ink, lineHeight: 1.25 }}>{task.title}</div>
+          <div style={{ display: "flex", alignItems: "center", gap: 14, marginTop: 8, flexWrap: "wrap", fontSize: 13, color: C.ink2 }}>
+            {task.date && <span style={{ display: "flex", alignItems: "center", gap: 4 }}><CalendarDays size={13} />{fmtDateShort(task.date)}</span>}
+            {task.startTime && <span style={{ display: "flex", alignItems: "center", gap: 4 }}><Clock size={13} />{fmtTime12(task.startTime)}{task.endTime ? `–${fmtTime12(task.endTime)}` : ""}</span>}
+            {task.location && <span style={{ display: "flex", alignItems: "center", gap: 4 }}>{task.modality === "virtual" ? <Video size={13} /> : <MapPin size={13} />}{task.location}</span>}
+            {project && <span style={{ display: "flex", alignItems: "center", gap: 4, color: project.color }}><FolderKanban size={13} />{project.name}</span>}
+          </div>
+          {cats.length > 0 && (
+            <div style={{ display: "flex", gap: 6, marginTop: 8, flexWrap: "wrap" }}>
+              {cats.map((c) => <Pill key={c.id} color={c.color} soft={C.bg} style={{ border: `1px solid ${c.color}33` }}>{c.name}</Pill>)}
+            </div>
+          )}
+          {task.subtasks && task.subtasks.length > 0 && (
+            <div style={{ marginTop: 10, display: "flex", alignItems: "center", gap: 8 }}>
+              <ProgressBar value={progress} color={task.status === "finalizada" ? C.baja : C.teal} />
+              <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 11.5, color: C.ink3, flexShrink: 0 }}>{progress}%</span>
+            </div>
+          )}
+        </div>
+        {task.status !== "finalizada" && (
+          <button
+            title="Marcar como finalizada"
+            onClick={(e) => { e.stopPropagation(); onQuickStatus(task.id, "finalizada"); }}
+            style={{ flexShrink: 0, width: 30, height: 30, borderRadius: 999, border: `1.5px solid ${C.line}`, background: "#fff", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", color: C.ink3 }}
+          ><Check size={16} /></button>
+        )}
+      </div>
+    </Card>
+  );
+}
+
+/* ============================================================
+   TASK MODAL (create/edit)
+   ============================================================ */
+function emptyTask() {
+  return {
+    id: uid(), title: "", description: "", projectId: "", categoryIds: [], tags: [],
+    color: "", priority: "media", status: "pendiente", date: todayISO(),
+    startTime: "", endTime: "", estDuration: "", actualDuration: "",
+    location: "", modality: "presencial", address: "", meetingLink: "",
+    notes: "", attachments: [], subtasks: [], dependsOn: [], repeat: "ninguna",
+    people: [], createdAt: Date.now(), reminders: [],
+  };
+}
+
+function TaskModal({ task, categories, projects, allTasks, onSave, onDelete, onClose }) {
+  const [t, setT] = useState(() => ({ ...emptyTask(), ...task }));
+  const [tagInput, setTagInput] = useState("");
+  const [customReminder, setCustomReminder] = useState("");
+  const set = (k, v) => setT((s) => ({ ...s, [k]: v }));
+
+  const toggleCat = (id) => setT((s) => ({ ...s, categoryIds: s.categoryIds.includes(id) ? s.categoryIds.filter((x) => x !== id) : [...s.categoryIds, id] }));
+  const toggleDep = (id) => setT((s) => ({ ...s, dependsOn: s.dependsOn.includes(id) ? s.dependsOn.filter((x) => x !== id) : [...s.dependsOn, id] }));
+
+  const addSubtask = () => set("subtasks", [...t.subtasks, { id: uid(), name: "", status: "pendiente", priority: "media", date: t.date, progress: 0 }]);
+  const updateSubtask = (id, patch) => set("subtasks", t.subtasks.map((s) => (s.id === id ? { ...s, ...patch } : s)));
+  const removeSubtask = (id) => set("subtasks", t.subtasks.filter((s) => s.id !== id));
+
+  const addAttachment = () => set("attachments", [...t.attachments, { id: uid(), name: "", url: "" }]);
+  const updateAttachment = (id, patch) => set("attachments", t.attachments.map((a) => (a.id === id ? { ...a, ...patch } : a)));
+  const removeAttachment = (id) => set("attachments", t.attachments.filter((a) => a.id !== id));
+
+  const addPerson = () => set("people", [...t.people, { id: uid(), name: "", phone: "", email: "", notes: "" }]);
+  const toggleReminder = (minutes) => {
+    const exists = t.reminders.some((r) => r.minutes === minutes);
+    if (exists) set("reminders", t.reminders.filter((r) => r.minutes !== minutes));
+    else set("reminders", [...t.reminders, { id: uid(), minutes }]);
+  };
+  const removeReminder = (id) => set("reminders", t.reminders.filter((r) => r.id !== id));
+  const addCustomReminder = () => {
+    const v = parseInt(customReminder, 10);
+    if (!Number.isNaN(v) && v >= 0 && !t.reminders.some((r) => r.minutes === v)) {
+      set("reminders", [...t.reminders, { id: uid(), minutes: v }]);
+    }
+    setCustomReminder("");
+  };
+  const updatePerson = (id, patch) => set("people", t.people.map((p) => (p.id === id ? { ...p, ...patch } : p)));
+  const removePerson = (id) => set("people", t.people.filter((p) => p.id !== id));
+
+  const addTag = () => { const v = tagInput.trim(); if (v && !t.tags.includes(v)) set("tags", [...t.tags, v]); setTagInput(""); };
+  const removeTag = (tag) => set("tags", t.tags.filter((x) => x !== tag));
+
+  const estFromTimes = minutesBetween(t.startTime, t.endTime);
+  const otherTasks = allTasks.filter((x) => x.id !== t.id);
+
+  const handleSave = () => {
+    if (!t.title.trim()) return;
+    onSave({ ...t, estDuration: t.estDuration || estFromTimes || "" });
+  };
+
+  return (
+    <div style={{ position: "fixed", inset: 0, background: "rgba(30,42,46,0.35)", display: "flex", alignItems: "flex-end", justifyContent: "center", zIndex: 50 }} onClick={onClose}>
+      <div onClick={(e) => e.stopPropagation()} style={{ background: C.bg, width: "100%", maxWidth: 640, maxHeight: "92vh", overflowY: "auto", borderRadius: "20px 20px 0 0", boxShadow: "0 -8px 40px rgba(0,0,0,.15)" }}>
+        <div className="modal-pad" style={{ position: "sticky", top: 0, background: C.bg, padding: "18px 22px", borderBottom: `1px solid ${C.line}`, display: "flex", justifyContent: "space-between", alignItems: "center", zIndex: 2 }}>
+          <span style={{ fontFamily: "'Fraunces', serif", fontSize: 20, fontWeight: 600, color: C.ink }}>{task && task.id ? "Editar tarea" : "Nueva tarea"}</span>
+          <button onClick={onClose} style={{ background: "none", border: "none", cursor: "pointer", color: C.ink3 }}><X size={22} /></button>
+        </div>
+
+        <div className="modal-pad" style={{ padding: 22, display: "flex", flexDirection: "column", gap: 18 }}>
+          {isBlocked(t, allTasks) && (
+            <div style={{ display: "flex", gap: 8, alignItems: "center", background: C.altaSoft, color: C.alta, padding: "10px 14px", borderRadius: 10, fontSize: 13.5 }}>
+              <AlertTriangle size={16} /> Esta tarea depende de otra sin finalizar. No debería iniciarse todavía.
+            </div>
+          )}
+
+          <Field label="Título *"><TextInput value={t.title} onChange={(e) => set("title", e.target.value)} placeholder="¿Qué hay que hacer?" autoFocus /></Field>
+          <Field label="Descripción"><TextArea value={t.description} onChange={(e) => set("description", e.target.value)} placeholder="Detalles, contexto, objetivo…" /></Field>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: 14 }}>
+            <Field label="Proyecto">
+              <Select value={t.projectId} onChange={(e) => set("projectId", e.target.value)}>
+                <option value="">Sin proyecto</option>
+                {projects.map((p) => <option key={p.id} value={p.id}>{p.name}</option>)}
+              </Select>
+            </Field>
+            <Field label="Color de la tarea">
+              <input type="color" value={t.color || "#1F5C57"} onChange={(e) => set("color", e.target.value)} style={{ ...inputStyle, padding: 4, height: 44, cursor: "pointer" }} />
+            </Field>
+          </div>
+
+          <Field label="Categorías (una o varias)">
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+              {categories.map((c) => {
+                const active = t.categoryIds.includes(c.id);
+                return (
+                  <button key={c.id} type="button" onClick={() => toggleCat(c.id)} style={{ cursor: "pointer", border: `1.5px solid ${active ? c.color : C.line}`, background: active ? c.color + "22" : "#fff", color: active ? c.color : C.ink2, borderRadius: 999, padding: "6px 12px", fontSize: 13, fontWeight: 600 }}>{c.name}</button>
+                );
+              })}
+            </div>
+          </Field>
+
+          <Field label="Etiquetas">
+            <div>
+              <div style={{ display: "flex", gap: 8 }}>
+                <TextInput value={tagInput} onChange={(e) => setTagInput(e.target.value)} onKeyDown={(e) => e.key === "Enter" && (e.preventDefault(), addTag())} placeholder="Escribe y presiona Enter" style={{ flex: 1 }} />
+                <Btn variant="ghost" onClick={addTag}>Añadir</Btn>
+              </div>
+              {t.tags.length > 0 && <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginTop: 8 }}>{t.tags.map((tag) => <Pill key={tag} color={C.ink2} soft={C.line} style={{ cursor: "pointer" }}>{tag}<X size={11} onClick={() => removeTag(tag)} /></Pill>)}</div>}
+            </div>
+          </Field>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: 14 }}>
+            <Field label="Prioridad">
+              <Select value={t.priority} onChange={(e) => set("priority", e.target.value)}>
+                {Object.entries(PRIORITIES).map(([k, v]) => <option key={k} value={k}>{v.dot} {v.label}</option>)}
+              </Select>
+            </Field>
+            <Field label="Estado">
+              <Select value={t.status} onChange={(e) => set("status", e.target.value)}>
+                {Object.entries(STATUSES).map(([k, v]) => <option key={k} value={k}>{v.label}</option>)}
+              </Select>
+            </Field>
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(130px, 1fr))", gap: 14 }}>
+            <Field label="Fecha"><TextInput type="date" value={t.date} onChange={(e) => set("date", e.target.value)} /></Field>
+            <Field label="Hora inicio"><TextInput type="time" value={t.startTime} onChange={(e) => set("startTime", e.target.value)} /></Field>
+            <Field label="Hora fin"><TextInput type="time" value={t.endTime} onChange={(e) => set("endTime", e.target.value)} /></Field>
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: 14 }}>
+            <Field label={`Duración estimada (min)${estFromTimes ? ` — sugerida ${estFromTimes}` : ""}`}><TextInput type="number" value={t.estDuration} onChange={(e) => set("estDuration", e.target.value)} placeholder={estFromTimes ? String(estFromTimes) : "60"} /></Field>
+            <Field label="Duración real (min)"><TextInput type="number" value={t.actualDuration} onChange={(e) => set("actualDuration", e.target.value)} /></Field>
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: 14 }}>
+            <Field label="Modalidad">
+              <Select value={t.modality} onChange={(e) => set("modality", e.target.value)}>
+                <option value="presencial">Presencial</option>
+                <option value="virtual">Virtual</option>
+              </Select>
+            </Field>
+            <Field label="Repetición">
+              <Select value={t.repeat} onChange={(e) => set("repeat", e.target.value)}>
+                {Object.entries(REPEATS).map(([k, v]) => <option key={k} value={k}>{v}</option>)}
+              </Select>
+            </Field>
+          </div>
+
+          <Field label={`Recordatorios${!t.date ? " (define una fecha para poder usarlos)" : ""}`}>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+              {REMINDER_PRESETS.map((p) => {
+                const active = t.reminders.some((r) => r.minutes === p.minutes);
+                return (
+                  <button key={p.minutes} type="button" disabled={!t.date} onClick={() => toggleReminder(p.minutes)} style={{ cursor: t.date ? "pointer" : "not-allowed", border: `1.5px solid ${active ? C.teal : C.line}`, background: active ? C.tealSoft : "#fff", color: active ? C.tealDark : C.ink2, borderRadius: 999, padding: "6px 12px", fontSize: 13, fontWeight: 600, opacity: t.date ? 1 : 0.5 }}>{p.label}</button>
+                );
+              })}
+            </div>
+            <div style={{ display: "flex", gap: 8, marginTop: 8 }}>
+              <TextInput type="number" min="0" value={customReminder} onChange={(e) => setCustomReminder(e.target.value)} placeholder="Personalizado: minutos antes" style={{ flex: 1 }} disabled={!t.date} />
+              <Btn variant="ghost" onClick={addCustomReminder} disabled={!t.date}>Añadir</Btn>
+            </div>
+            {t.reminders.length > 0 && (
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginTop: 10 }}>
+                {t.reminders.slice().sort((a, b) => a.minutes - b.minutes).map((r) => (
+                  <Pill key={r.id} color={C.tealDark} soft={C.tealSoft} style={{ cursor: "pointer" }}>
+                    <Clock size={11} /> {reminderLabel(r.minutes)} <X size={11} onClick={() => removeReminder(r.id)} />
+                  </Pill>
+                ))}
+              </div>
+            )}
+          </Field>
+
+          {t.modality === "presencial" ? (
+            <Field label="Lugar / dirección">
+              <div style={{ display: "flex", gap: 8 }}>
+                <TextInput value={t.location} onChange={(e) => set("location", e.target.value)} placeholder="Nombre del lugar" style={{ flex: 1 }} />
+                <TextInput value={t.address} onChange={(e) => set("address", e.target.value)} placeholder="Dirección" style={{ flex: 1 }} />
+              </div>
+              {t.address && <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(t.address)}`} target="_blank" rel="noreferrer" style={{ fontSize: 12.5, color: C.teal, marginTop: 6, display: "inline-flex", alignItems: "center", gap: 4 }}><MapPin size={12} /> Abrir en Google Maps</a>}
+            </Field>
+          ) : (
+            <Field label="Enlace de la reunión">
+              <TextInput value={t.meetingLink} onChange={(e) => set("meetingLink", e.target.value)} placeholder="https://meet.google.com/…" />
+            </Field>
+          )}
+
+          {/* Subtareas */}
+          <div>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
+              <span style={{ fontSize: 12.5, fontWeight: 600, color: C.ink2 }}>Subtareas ({t.subtasks.length})</span>
+              <button onClick={addSubtask} type="button" style={{ background: "none", border: "none", color: C.teal, cursor: "pointer", fontSize: 13, fontWeight: 600, display: "flex", alignItems: "center", gap: 4 }}><Plus size={14} /> Añadir subtarea</button>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+              {t.subtasks.map((s) => (
+                <div key={s.id} style={{ display: "flex", gap: 8, alignItems: "center", background: "#fff", border: `1px solid ${C.line}`, borderRadius: 10, padding: 8 }}>
+                  <TextInput value={s.name} onChange={(e) => updateSubtask(s.id, { name: e.target.value })} placeholder="Nombre de la subtarea" style={{ flex: 1, border: "none", padding: "4px 6px" }} />
+                  <Select value={s.priority} onChange={(e) => updateSubtask(s.id, { priority: e.target.value })} style={{ width: 92, padding: "6px 8px", fontSize: 12.5 }}>
+                    {Object.entries(PRIORITIES).map(([k, v]) => <option key={k} value={k}>{v.label}</option>)}
+                  </Select>
+                  <Select value={s.status} onChange={(e) => updateSubtask(s.id, { status: e.target.value, progress: e.target.value === "finalizada" ? 100 : s.progress })} style={{ width: 118, padding: "6px 8px", fontSize: 12.5 }}>
+                    {Object.entries(STATUSES).map(([k, v]) => <option key={k} value={k}>{v.label}</option>)}
+                  </Select>
+                  <button onClick={() => removeSubtask(s.id)} style={{ background: "none", border: "none", color: C.ink3, cursor: "pointer" }}><Trash2 size={15} /></button>
+                </div>
+              ))}
+              {t.subtasks.length > 0 && <div style={{ display: "flex", alignItems: "center", gap: 8, marginTop: 4 }}><ProgressBar value={taskProgress(t)} /><span style={{ fontSize: 11.5, color: C.ink3, fontFamily: "'IBM Plex Mono', monospace" }}>{taskProgress(t)}% avance automático</span></div>}
+            </div>
+          </div>
+
+          {/* Dependencias */}
+          <Field label="Depende de (esta tarea no debería iniciarse hasta que las siguientes finalicen)">
+            <Select multiple value={t.dependsOn} onChange={(e) => set("dependsOn", Array.from(e.target.selectedOptions, (o) => o.value))} style={{ minHeight: 84 }}>
+              {otherTasks.map((o) => <option key={o.id} value={o.id}>{o.title} {o.status === "finalizada" ? "✓" : ""}</option>)}
+            </Select>
+          </Field>
+
+          {/* Personas */}
+          <div>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
+              <span style={{ fontSize: 12.5, fontWeight: 600, color: C.ink2 }}>Personas asociadas</span>
+              <button onClick={addPerson} type="button" style={{ background: "none", border: "none", color: C.teal, cursor: "pointer", fontSize: 13, fontWeight: 600, display: "flex", alignItems: "center", gap: 4 }}><Plus size={14} /> Añadir persona</button>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+              {t.people.map((p) => (
+                <div key={p.id} style={{ display: "flex", gap: 8, flexWrap: "wrap", background: "#fff", border: `1px solid ${C.line}`, borderRadius: 10, padding: 8 }}>
+                  <TextInput value={p.name} onChange={(e) => updatePerson(p.id, { name: e.target.value })} placeholder="Nombre" style={{ flex: "1 1 140px", border: "none" }} />
+                  <TextInput value={p.phone} onChange={(e) => updatePerson(p.id, { phone: e.target.value })} placeholder="Teléfono" style={{ flex: "1 1 120px", border: "none" }} />
+                  <TextInput value={p.email} onChange={(e) => updatePerson(p.id, { email: e.target.value })} placeholder="Correo" style={{ flex: "1 1 150px", border: "none" }} />
+                  <div style={{ display: "flex", gap: 6 }}>
+                    {p.phone && <a href={`tel:${p.phone}`} style={{ color: C.teal }}><Phone size={16} /></a>}
+                    {p.email && <a href={`mailto:${p.email}`} style={{ color: C.teal }}><Mail size={16} /></a>}
+                    <button onClick={() => removePerson(p.id)} style={{ background: "none", border: "none", color: C.ink3, cursor: "pointer" }}><Trash2 size={15} /></button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Adjuntos */}
+          <div>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
+              <span style={{ fontSize: 12.5, fontWeight: 600, color: C.ink2 }}>Adjuntos (enlaces a imágenes, PDF, Word, Excel, video, audio…)</span>
+              <button onClick={addAttachment} type="button" style={{ background: "none", border: "none", color: C.teal, cursor: "pointer", fontSize: 13, fontWeight: 600, display: "flex", alignItems: "center", gap: 4 }}><Plus size={14} /> Añadir enlace</button>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+              {t.attachments.map((a) => (
+                <div key={a.id} style={{ display: "flex", gap: 8, alignItems: "center", background: "#fff", border: `1px solid ${C.line}`, borderRadius: 10, padding: 8 }}>
+                  <Paperclip size={14} color={C.ink3} />
+                  <TextInput value={a.name} onChange={(e) => updateAttachment(a.id, { name: e.target.value })} placeholder="Nombre del archivo" style={{ flex: 1, border: "none" }} />
+                  <TextInput value={a.url} onChange={(e) => updateAttachment(a.id, { url: e.target.value })} placeholder="URL" style={{ flex: 1, border: "none" }} />
+                  <button onClick={() => removeAttachment(a.id)} style={{ background: "none", border: "none", color: C.ink3, cursor: "pointer" }}><Trash2 size={15} /></button>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <Field label="Notas / observaciones"><TextArea value={t.notes} onChange={(e) => set("notes", e.target.value)} placeholder="Observaciones adicionales…" /></Field>
+        </div>
+
+        <div className="modal-pad" style={{ position: "sticky", bottom: 0, background: C.bg, borderTop: `1px solid ${C.line}`, padding: "14px 22px", display: "flex", justifyContent: "space-between", gap: 10, flexWrap: "wrap" }}>
+          {task && task.id ? <Btn variant="danger" onClick={() => onDelete(t.id)}><Trash2 size={15} /> Eliminar</Btn> : <span />}
+          <div style={{ display: "flex", gap: 10 }}>
+            <Btn variant="ghost" onClick={onClose}>Cancelar</Btn>
+            <Btn onClick={handleSave}><Check size={15} /> Guardar tarea</Btn>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ============================================================
+   PROJECT MODAL
+   ============================================================ */
+function ProjectModal({ project, tasks, onSave, onDelete, onClose }) {
+  const [p, setP] = useState(() => ({ id: uid(), name: "", description: "", color: "#1F5C57", deadline: "", links: [], ...project }));
+  const set = (k, v) => setP((s) => ({ ...s, [k]: v }));
+  const addLink = () => set("links", [...(p.links || []), { id: uid(), name: "", url: "" }]);
+  const updateLink = (id, patch) => set("links", p.links.map((l) => (l.id === id ? { ...l, ...patch } : l)));
+  const removeLink = (id) => set("links", p.links.filter((l) => l.id !== id));
+
+  const projectTasks = tasks.filter((t) => t.projectId === p.id);
+  const avgProgress = projectTasks.length ? Math.round(projectTasks.reduce((a, t) => a + taskProgress(t), 0) / projectTasks.length) : 0;
+
+  return (
+    <div style={{ position: "fixed", inset: 0, background: "rgba(30,42,46,0.35)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 50, padding: 16 }} onClick={onClose}>
+      <div onClick={(e) => e.stopPropagation()} style={{ background: C.bg, width: "100%", maxWidth: 520, maxHeight: "90vh", overflowY: "auto", borderRadius: 20 }}>
+        <div className="modal-pad" style={{ padding: "18px 22px", borderBottom: `1px solid ${C.line}`, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+          <span style={{ fontFamily: "'Fraunces', serif", fontSize: 20, fontWeight: 600 }}>{project && project.id ? "Editar proyecto" : "Nuevo proyecto"}</span>
+          <button onClick={onClose} style={{ background: "none", border: "none", cursor: "pointer", color: C.ink3 }}><X size={22} /></button>
+        </div>
+        <div className="modal-pad" style={{ padding: 22, display: "flex", flexDirection: "column", gap: 16 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr auto", gap: 14 }}>
+            <Field label="Nombre *"><TextInput value={p.name} onChange={(e) => set("name", e.target.value)} autoFocus /></Field>
+            <Field label="Color"><input type="color" value={p.color} onChange={(e) => set("color", e.target.value)} style={{ ...inputStyle, padding: 4, height: 40, width: 52, cursor: "pointer" }} /></Field>
+          </div>
+          <Field label="Descripción"><TextArea value={p.description} onChange={(e) => set("description", e.target.value)} /></Field>
+          <Field label="Fecha límite / hito"><TextInput type="date" value={p.deadline} onChange={(e) => set("deadline", e.target.value)} /></Field>
+          {project && project.id && (
+            <div>
+              <div style={{ fontSize: 12.5, fontWeight: 600, color: C.ink2, marginBottom: 6 }}>Avance del proyecto — {projectTasks.length} tarea(s)</div>
+              <ProgressBar value={avgProgress} color={p.color} />
+            </div>
+          )}
+          <div>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
+              <span style={{ fontSize: 12.5, fontWeight: 600, color: C.ink2 }}>Enlaces</span>
+              <button onClick={addLink} type="button" style={{ background: "none", border: "none", color: C.teal, cursor: "pointer", fontSize: 13, fontWeight: 600, display: "flex", alignItems: "center", gap: 4 }}><Plus size={14} /> Añadir</button>
+            </div>
+            {(p.links || []).map((l) => (
+              <div key={l.id} style={{ display: "flex", gap: 8, marginBottom: 8 }}>
+                <TextInput value={l.name} onChange={(e) => updateLink(l.id, { name: e.target.value })} placeholder="Nombre" style={{ flex: 1 }} />
+                <TextInput value={l.url} onChange={(e) => updateLink(l.id, { url: e.target.value })} placeholder="URL" style={{ flex: 1 }} />
+                <button onClick={() => removeLink(l.id)} style={{ background: "none", border: "none", color: C.ink3, cursor: "pointer" }}><Trash2 size={15} /></button>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="modal-pad" style={{ borderTop: `1px solid ${C.line}`, padding: "14px 22px", display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 10 }}>
+          {project && project.id ? <Btn variant="danger" onClick={() => onDelete(p.id)}><Trash2 size={15} /> Eliminar</Btn> : <span />}
+          <div style={{ display: "flex", gap: 10 }}>
+            <Btn variant="ghost" onClick={onClose}>Cancelar</Btn>
+            <Btn onClick={() => p.name.trim() && onSave(p)}><Check size={15} /> Guardar</Btn>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ============================================================
+   CATEGORY MODAL
+   ============================================================ */
+function CategoryModal({ category, onSave, onDelete, onClose }) {
+  const [c, setC] = useState(() => ({ id: uid(), name: "", color: "#1F5C57", icon: "Personal", ...category }));
+  return (
+    <div style={{ position: "fixed", inset: 0, background: "rgba(30,42,46,0.35)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 50, padding: 16 }} onClick={onClose}>
+      <div onClick={(e) => e.stopPropagation()} style={{ background: C.bg, width: "100%", maxWidth: 420, borderRadius: 20, padding: 22 }}>
+        <div style={{ fontFamily: "'Fraunces', serif", fontSize: 20, fontWeight: 600, marginBottom: 16 }}>{category && category.id ? "Editar categoría" : "Nueva categoría"}</div>
+        <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+          <Field label="Nombre"><TextInput value={c.name} onChange={(e) => setC({ ...c, name: e.target.value })} autoFocus /></Field>
+          <Field label="Color"><input type="color" value={c.color} onChange={(e) => setC({ ...c, color: e.target.value })} style={{ ...inputStyle, padding: 4, height: 40, cursor: "pointer" }} /></Field>
+        </div>
+        <div style={{ display: "flex", justifyContent: "space-between", marginTop: 20 }}>
+          {category && category.id ? <Btn variant="danger" onClick={() => onDelete(c.id)}><Trash2 size={15} /> Eliminar</Btn> : <span />}
+          <div style={{ display: "flex", gap: 10 }}>
+            <Btn variant="ghost" onClick={onClose}>Cancelar</Btn>
+            <Btn onClick={() => c.name.trim() && onSave(c)}><Check size={15} /> Guardar</Btn>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ============================================================
+   MI DÍA
+   ============================================================ */
+function MiDia({ tasks, categories, projects, onOpenTask, onQuickStatus, greetingName }) {
+  const today = todayISO();
+  const yesterday = addDays(today, -1);
+  const now = nowHHMM();
+
+  const todays = tasks.filter((t) => t.date === today);
+  const highPriorityToday = todays.filter((t) => t.priority === "alta" && t.status !== "finalizada");
+  const overdue = tasks.filter(isOverdue);
+  const yesterdayPending = tasks.filter((t) => t.date === yesterday && t.status !== "finalizada");
+  const nextUp = todays.filter((t) => t.startTime && t.startTime >= now && t.status !== "finalizada").sort((a, b) => a.startTime.localeCompare(b.startTime))[0]
+    || tasks.filter((t) => t.date > today && t.status !== "finalizada").sort((a, b) => (a.date + (a.startTime || "")).localeCompare(b.date + (b.startTime || "")))[0];
+
+  const occupiedMin = todays.reduce((a, t) => a + (minutesBetween(t.startTime, t.endTime) || Number(t.estDuration) || 0), 0);
+  const occupancy = Math.min(100, Math.round((occupiedMin / WORK_DAY_MIN) * 100));
+  const dayProgress = todays.length ? Math.round(todays.reduce((a, t) => a + taskProgress(t), 0) / todays.length) : 0;
+
+  const upcomingTasks = tasks
+    .filter((t) => t.date >= today && t.date <= addDays(today, 3) && t.status !== "finalizada")
+    .sort((a, b) => (a.date + (a.startTime || "")).localeCompare(b.date + (b.startTime || "")))
+    .slice(0, 5);
+
+  const reminderTriggers = getUpcomingReminderTriggers(tasks).slice(0, 6);
+
+  const hour = new Date().getHours();
+  const greeting = hour < 12 ? "Buenos días" : hour < 19 ? "Buenas tardes" : "Buenas noches";
+
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 22 }}>
+      <Card className="modal-pad" style={{ padding: 24, background: `linear-gradient(135deg, ${C.tealDark} 0%, ${C.teal} 100%)`, border: "none", color: "#fff" }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 20, flexWrap: "wrap" }}>
+          <div>
+            <div style={{ fontSize: 13, opacity: .8, fontWeight: 600, letterSpacing: ".02em", marginBottom: 4 }}>{fmtDateLong(today).toUpperCase()} · {fmtTime12(now)}</div>
+            <div style={{ fontFamily: "'Fraunces', serif", fontSize: 30, fontWeight: 600 }}>{greeting}{greetingName ? `, ${greetingName}` : ""}.</div>
+            <div style={{ fontSize: 14.5, opacity: .9, marginTop: 6, maxWidth: 420 }}>
+              {todays.length === 0 ? "No tienes tareas programadas para hoy." : `Tienes ${todays.length} tarea${todays.length === 1 ? "" : "s"} hoy · ${highPriorityToday.length} de prioridad alta.`}
+            </div>
+            {nextUp && (
+              <div style={{ marginTop: 14, display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(255,255,255,0.14)", padding: "8px 14px", borderRadius: 999, fontSize: 13.5 }}>
+                <ArrowRight size={14} /> Siguiente: <strong>{nextUp.title}</strong>{nextUp.startTime ? ` — ${fmtTime12(nextUp.startTime)}` : ""}{nextUp.date !== today ? ` (${fmtDateShort(nextUp.date)})` : ""}
+              </div>
+            )}
+          </div>
+          <div style={{ display: "flex", gap: 18, alignItems: "center" }}>
+            <div style={{ filter: "brightness(1.1)" }}><DayRing occupancy={occupancy} progress={dayProgress} /></div>
+            <div style={{ fontSize: 12.5, lineHeight: 1.8 }}>
+              <div><span style={{ display: "inline-block", width: 9, height: 9, borderRadius: 99, background: C.mustard, marginRight: 6 }} />Ocupación: {occupancy}%</div>
+              <div><span style={{ display: "inline-block", width: 9, height: 9, borderRadius: 99, background: "#fff", marginRight: 6 }} />Avance: {dayProgress}%</div>
+            </div>
+          </div>
+        </div>
+      </Card>
+
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: 12 }}>
+        {[
+          { label: "Vencidas", value: overdue.length, color: C.alta, icon: AlertTriangle },
+          { label: "De ayer, pendientes", value: yesterdayPending.length, color: C.mustard, icon: CalendarClock },
+          { label: "Prioridad alta hoy", value: highPriorityToday.length, color: C.alta, icon: Sparkles },
+          { label: "Recordatorios programados", value: reminderTriggers.length, color: C.teal, icon: Clock },
+        ].map((s) => (
+          <Card key={s.label} style={{ padding: 16 }}>
+            <s.icon size={16} color={s.color} />
+            <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 26, fontWeight: 600, color: C.ink, marginTop: 8 }}>{s.value}</div>
+            <div style={{ fontSize: 12.5, color: C.ink2, marginTop: 2 }}>{s.label}</div>
+          </Card>
+        ))}
+      </div>
+
+      {overdue.length > 0 && (
+        <Section title="Tareas vencidas" icon={AlertTriangle}>
+          <TaskList tasks={overdue} categories={categories} projects={projects} allTasks={tasks} onOpen={onOpenTask} onQuickStatus={onQuickStatus} />
+        </Section>
+      )}
+
+      <Section title="Hoy" icon={CalendarDays}>
+        {todays.length === 0 ? <Empty icon={CalendarDays} title="Un día despejado" hint="No hay tareas programadas para hoy." /> :
+          <TaskList tasks={todays.sort((a, b) => (a.startTime || "99:99").localeCompare(b.startTime || "99:99"))} categories={categories} projects={projects} allTasks={tasks} onOpen={onOpenTask} onQuickStatus={onQuickStatus} />}
+      </Section>
+
+      {yesterdayPending.length > 0 && (
+        <Section title="Pendientes de ayer" icon={CalendarClock}>
+          <TaskList tasks={yesterdayPending} categories={categories} projects={projects} allTasks={tasks} onOpen={onOpenTask} onQuickStatus={onQuickStatus} />
+        </Section>
+      )}
+
+      {reminderTriggers.length > 0 && (
+        <Section title="Recordatorios programados" icon={Clock}>
+          <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+            {reminderTriggers.map(({ task, reminder, trigger }) => (
+              <Card key={task.id + reminder.id} onClick={() => onOpenTask(task)} style={{ padding: 14, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12 }}>
+                <div style={{ minWidth: 0 }}>
+                  <div style={{ fontWeight: 600, fontSize: 14.5, color: C.ink, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{task.title}</div>
+                  <div style={{ fontSize: 12.5, color: C.ink2, marginTop: 2 }}>{reminderLabel(reminder.minutes)} · {fmtDateShort(task.date)}{task.startTime ? ` ${fmtTime12(task.startTime)}` : ""}</div>
+                </div>
+                <Pill color={C.tealDark} soft={C.tealSoft} style={{ flexShrink: 0 }}>{fmtCountdown(trigger)}</Pill>
+              </Card>
+            ))}
+          </div>
+        </Section>
+      )}
+
+      <Section title="Próximas tareas (3 días)" icon={CalendarDays}>
+        {upcomingTasks.length === 0 ? <Empty icon={CalendarDays} title="Nada en el horizonte cercano" /> :
+          <TaskList tasks={upcomingTasks} categories={categories} projects={projects} allTasks={tasks} onOpen={onOpenTask} onQuickStatus={onQuickStatus} />}
+      </Section>
+    </div>
+  );
+}
+
+function Section({ title, icon: Icon, children, right }) {
+  return (
+    <div>
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 12 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+          <Icon size={17} color={C.ink2} />
+          <span style={{ fontFamily: "'Fraunces', serif", fontSize: 19, fontWeight: 600, color: C.ink }}>{title}</span>
+        </div>
+        {right}
+      </div>
+      {children}
+    </div>
+  );
+}
+
+function TaskList({ tasks, categories, projects, allTasks, onOpen, onQuickStatus }) {
+  return <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>{tasks.map((t) => <TaskCard key={t.id} task={t} categories={categories} projects={projects} tasks={allTasks} onOpen={onOpen} onQuickStatus={onQuickStatus} />)}</div>;
+}
+
+/* ============================================================
+   AGENDA (día / semana / mes / lista)
+   ============================================================ */
+function Agenda({ tasks, categories, projects, onOpenTask, onQuickStatus }) {
+  const [mode, setMode] = useState("dia");
+  const [cursor, setCursor] = useState(todayISO());
+  const [monthCursor, setMonthCursor] = useState(() => { const d = new Date(); return { y: d.getFullYear(), m: d.getMonth() }; });
+  const [selectedDay, setSelectedDay] = useState(todayISO());
+
+  const conflicts = useMemo(() => {
+    const byDate = {};
+    tasks.forEach((t) => { if (t.date && t.startTime) { (byDate[t.date] = byDate[t.date] || []).push(t); } });
+    const flagged = new Set();
+    Object.values(byDate).forEach((list) => {
+      list.sort((a, b) => a.startTime.localeCompare(b.startTime));
+      for (let i = 0; i < list.length - 1; i++) {
+        const a = list[i], b = list[i + 1];
+        const aEnd = a.endTime || a.startTime;
+        if (b.startTime < aEnd) { flagged.add(a.id); flagged.add(b.id); }
+      }
+    });
+    const overloaded = Object.entries(byDate).filter(([, l]) => l.length >= 5).map(([d]) => d);
+    return { flagged, overloaded };
+  }, [tasks]);
+
+  const tabs = [
+    { id: "dia", label: "Día" },
+    { id: "semana", label: "Semana" },
+    { id: "mes", label: "Mes" },
+    { id: "lista", label: "Lista" },
+  ];
+
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
+      <div style={{ display: "flex", gap: 6, background: C.line, padding: 4, borderRadius: 12, width: "fit-content" }}>
+        {tabs.map((tb) => (
+          <button key={tb.id} onClick={() => setMode(tb.id)} style={{ border: "none", cursor: "pointer", padding: "7px 16px", borderRadius: 9, fontSize: 13.5, fontWeight: 600, background: mode === tb.id ? "#fff" : "transparent", color: mode === tb.id ? C.ink : C.ink2 }}>{tb.label}</button>
+        ))}
+      </div>
+
+      {conflicts.flagged.size > 0 && (
+        <div style={{ display: "flex", gap: 8, alignItems: "center", background: C.mediaSoft, color: "#8a641c", padding: "10px 14px", borderRadius: 10, fontSize: 13.5 }}>
+          <AlertTriangle size={16} /> Hay {conflicts.flagged.size} tarea(s) con horarios superpuestos.
+        </div>
+      )}
+      {conflicts.overloaded.length > 0 && (
+        <div style={{ display: "flex", gap: 8, alignItems: "center", background: C.altaSoft, color: C.alta, padding: "10px 14px", borderRadius: 10, fontSize: 13.5 }}>
+          <AlertTriangle size={16} /> {conflicts.overloaded.length} día(s) con 5 o más tareas: posible sobrecarga.
+        </div>
+      )}
+
+      {mode === "dia" && (
+        <>
+          <DateNav date={cursor} onChange={setCursor} />
+          <TaskList tasks={tasks.filter((t) => t.date === cursor).sort((a, b) => (a.startTime || "99:99").localeCompare(b.startTime || "99:99"))} categories={categories} projects={projects} allTasks={tasks} onOpen={onOpenTask} onQuickStatus={onQuickStatus} />
+          {tasks.filter((t) => t.date === cursor).length === 0 && <Empty icon={CalendarDays} title="Sin tareas este día" />}
+        </>
+      )}
+
+      {mode === "semana" && <WeekView tasks={tasks} categories={categories} projects={projects} onOpenTask={onOpenTask} onQuickStatus={onQuickStatus} />}
+
+      {mode === "mes" && (
+        <MonthView tasks={tasks} monthCursor={monthCursor} setMonthCursor={setMonthCursor} selectedDay={selectedDay} setSelectedDay={setSelectedDay}
+          categories={categories} projects={projects} onOpenTask={onOpenTask} onQuickStatus={onQuickStatus} />
+      )}
+
+      {mode === "lista" && (
+        <TaskList tasks={[...tasks].sort((a, b) => (a.date + (a.startTime || "")).localeCompare(b.date + (b.startTime || "")))} categories={categories} projects={projects} allTasks={tasks} onOpen={onOpenTask} onQuickStatus={onQuickStatus} />
+      )}
+    </div>
+  );
+}
+
+function DateNav({ date, onChange }) {
+  return (
+    <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+      <button onClick={() => onChange(addDays(date, -1))} style={{ border: `1px solid ${C.line}`, background: "#fff", borderRadius: 10, width: 34, height: 34, cursor: "pointer" }}><ChevronLeft size={16} /></button>
+      <span style={{ fontFamily: "'Fraunces', serif", fontSize: 18, fontWeight: 600, minWidth: 200, textAlign: "center" }}>{fmtDateLong(date)}</span>
+      <button onClick={() => onChange(addDays(date, 1))} style={{ border: `1px solid ${C.line}`, background: "#fff", borderRadius: 10, width: 34, height: 34, cursor: "pointer" }}><ChevronRight size={16} /></button>
+      {date !== todayISO() && <button onClick={() => onChange(todayISO())} style={{ border: "none", background: "none", color: C.teal, fontSize: 13, fontWeight: 600, cursor: "pointer" }}>Hoy</button>}
+    </div>
+  );
+}
+
+function WeekView({ tasks, categories, projects, onOpenTask, onQuickStatus }) {
+  const [weekStart, setWeekStart] = useState(() => { const d = new Date(); const day = d.getDay(); return addDays(todayISO(), -day); });
+  const days = Array.from({ length: 7 }, (_, i) => addDays(weekStart, i));
+  return (
+    <div>
+      <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }}>
+        <button onClick={() => setWeekStart(addDays(weekStart, -7))} style={{ border: `1px solid ${C.line}`, background: "#fff", borderRadius: 10, width: 34, height: 34, cursor: "pointer" }}><ChevronLeft size={16} /></button>
+        <span style={{ fontSize: 14, fontWeight: 600, color: C.ink2 }}>{fmtDateShort(days[0])} — {fmtDateShort(days[6])}</span>
+        <button onClick={() => setWeekStart(addDays(weekStart, 7))} style={{ border: `1px solid ${C.line}`, background: "#fff", borderRadius: 10, width: 34, height: 34, cursor: "pointer" }}><ChevronRight size={16} /></button>
+      </div>
+      <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+        {days.map((d) => {
+          const dayTasks = tasks.filter((t) => t.date === d).sort((a, b) => (a.startTime || "99:99").localeCompare(b.startTime || "99:99"));
+          return (
+            <div key={d}>
+              <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
+                <span style={{ fontFamily: "'Fraunces', serif", fontWeight: 600, fontSize: 15, color: d === todayISO() ? C.teal : C.ink }}>{fmtDateLong(d)}</span>
+                {d === todayISO() && <Pill color={C.teal} soft={C.tealSoft}>Hoy</Pill>}
+                <span style={{ fontSize: 12, color: C.ink3 }}>· {dayTasks.length} tarea(s)</span>
+              </div>
+              {dayTasks.length === 0 ? <div style={{ fontSize: 13, color: C.ink3, paddingLeft: 4 }}>Sin tareas</div> :
+                <TaskList tasks={dayTasks} categories={categories} projects={projects} allTasks={tasks} onOpen={onOpenTask} onQuickStatus={onQuickStatus} />}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+function MonthView({ tasks, monthCursor, setMonthCursor, selectedDay, setSelectedDay, categories, projects, onOpenTask, onQuickStatus }) {
+  const { y, m } = monthCursor;
+  const first = new Date(y, m, 1);
+  const startOffset = first.getDay();
+  const daysInMonth = new Date(y, m + 1, 0).getDate();
+  const cells = [];
+  for (let i = 0; i < startOffset; i++) cells.push(null);
+  for (let d = 1; d <= daysInMonth; d++) cells.push(`${y}-${pad(m + 1)}-${pad(d)}`);
+
+  const countByDay = useMemo(() => { const map = {}; tasks.forEach((t) => { map[t.date] = (map[t.date] || 0) + 1; }); return map; }, [tasks]);
+  const selectedTasks = tasks.filter((t) => t.date === selectedDay).sort((a, b) => (a.startTime || "99:99").localeCompare(b.startTime || "99:99"));
+
+  return (
+    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 20, alignItems: "start" }}>
+      <Card style={{ padding: 18 }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 14 }}>
+          <span style={{ fontFamily: "'Fraunces', serif", fontSize: 17, fontWeight: 600 }}>{MONTHS[m]} {y}</span>
+          <div style={{ display: "flex", gap: 6 }}>
+            <button onClick={() => setMonthCursor(m === 0 ? { y: y - 1, m: 11 } : { y, m: m - 1 })} style={{ border: `1px solid ${C.line}`, background: "#fff", borderRadius: 8, width: 30, height: 30, cursor: "pointer" }}><ChevronLeft size={14} /></button>
+            <button onClick={() => setMonthCursor(m === 11 ? { y: y + 1, m: 0 } : { y, m: m + 1 })} style={{ border: `1px solid ${C.line}`, background: "#fff", borderRadius: 8, width: 30, height: 30, cursor: "pointer" }}><ChevronRight size={14} /></button>
+          </div>
+        </div>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(7,1fr)", gap: 4, fontSize: 11, color: C.ink3, fontWeight: 600, marginBottom: 6 }}>
+          {["D", "L", "M", "M", "J", "V", "S"].map((d, i) => <div key={i} style={{ textAlign: "center" }}>{d}</div>)}
+        </div>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(7,1fr)", gap: 4 }}>
+          {cells.map((c, i) => {
+            if (!c) return <div key={i} />;
+            const count = countByDay[c] || 0;
+            const isToday = c === todayISO();
+            const isSel = c === selectedDay;
+            return (
+              <button key={i} onClick={() => setSelectedDay(c)} style={{
+                aspectRatio: "1", border: `1px solid ${isSel ? C.teal : C.line}`, borderRadius: 10, cursor: "pointer",
+                background: isSel ? C.tealSoft : "#fff", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 3, position: "relative",
+              }}>
+                <span style={{ fontSize: 13, fontWeight: isToday ? 700 : 500, color: isToday ? C.teal : C.ink }}>{c.slice(-2).replace(/^0/, "")}</span>
+                {count > 0 && <span style={{ width: 5, height: 5, borderRadius: 99, background: C.mustard }} />}
+              </button>
+            );
+          })}
+        </div>
+      </Card>
+      <div>
+        <div style={{ fontFamily: "'Fraunces', serif", fontSize: 16, fontWeight: 600, marginBottom: 10 }}>{fmtDateLong(selectedDay)}</div>
+        {selectedTasks.length === 0 ? <Empty icon={CalendarDays} title="Sin tareas" /> :
+          <TaskList tasks={selectedTasks} categories={categories} projects={projects} allTasks={tasks} onOpen={onOpenTask} onQuickStatus={onQuickStatus} />}
+      </div>
+    </div>
+  );
+}
+
+/* ============================================================
+   PROYECTOS
+   ============================================================ */
+function Proyectos({ projects, tasks, onOpenProject, onNewProject, onOpenTask, onQuickStatus, categories }) {
+  const [openId, setOpenId] = useState(null);
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
+      <div style={{ display: "flex", justifyContent: "flex-end" }}>
+        <Btn onClick={onNewProject}><Plus size={15} /> Nuevo proyecto</Btn>
+      </div>
+      {projects.length === 0 && <Empty icon={FolderKanban} title="Aún no hay proyectos" hint="Crea uno para agrupar tareas, cronogramas y avances." />}
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px,1fr))", gap: 14 }}>
+        {projects.map((p) => {
+          const pt = tasks.filter((t) => t.projectId === p.id);
+          const avg = pt.length ? Math.round(pt.reduce((a, t) => a + taskProgress(t), 0) / pt.length) : 0;
+          const done = pt.filter((t) => t.status === "finalizada").length;
+          return (
+            <Card key={p.id} style={{ padding: 18, cursor: "pointer" }} onClick={() => setOpenId(openId === p.id ? null : p.id)}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                  <span style={{ width: 10, height: 10, borderRadius: 99, background: p.color }} />
+                  <span style={{ fontFamily: "'Fraunces', serif", fontSize: 17, fontWeight: 600 }}>{p.name}</span>
+                </div>
+                <button onClick={(e) => { e.stopPropagation(); onOpenProject(p); }} style={{ background: "none", border: "none", cursor: "pointer", color: C.ink3 }}><Pencil size={15} /></button>
+              </div>
+              {p.description && <div style={{ fontSize: 13, color: C.ink2, marginTop: 6 }}>{p.description}</div>}
+              <div style={{ marginTop: 12, display: "flex", alignItems: "center", gap: 8 }}>
+                <ProgressBar value={avg} color={p.color} />
+                <span style={{ fontSize: 11.5, color: C.ink3, fontFamily: "'IBM Plex Mono', monospace" }}>{avg}%</span>
+              </div>
+              <div style={{ display: "flex", gap: 14, marginTop: 10, fontSize: 12.5, color: C.ink2 }}>
+                <span>{pt.length} tarea(s)</span><span>{done} finalizada(s)</span>
+                {p.deadline && <span>· vence {fmtDateShort(p.deadline)}</span>}
+              </div>
+              {openId === p.id && (
+                <div style={{ marginTop: 14, borderTop: `1px solid ${C.line}`, paddingTop: 14, display: "flex", flexDirection: "column", gap: 8 }} onClick={(e) => e.stopPropagation()}>
+                  {pt.length === 0 ? <span style={{ fontSize: 13, color: C.ink3 }}>Sin tareas todavía</span> :
+                    <TaskList tasks={pt} categories={categories} projects={projects} allTasks={tasks} onOpen={onOpenTask} onQuickStatus={onQuickStatus} />}
+                </div>
+              )}
+            </Card>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+/* ============================================================
+   CATEGORÍAS
+   ============================================================ */
+function Categorias({ categories, tasks, onOpenCategory, onNewCategory }) {
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
+      <div style={{ display: "flex", justifyContent: "flex-end" }}>
+        <Btn onClick={onNewCategory}><Plus size={15} /> Nueva categoría</Btn>
+      </div>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px,1fr))", gap: 14 }}>
+        {categories.map((c) => {
+          const count = tasks.filter((t) => (t.categoryIds || []).includes(c.id)).length;
+          const Icon = CAT_ICONS[c.icon] || Tag;
+          return (
+            <Card key={c.id} style={{ padding: 16, cursor: "pointer" }} onClick={() => onOpenCategory(c)}>
+              <div style={{ width: 36, height: 36, borderRadius: 10, background: c.color + "22", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 10 }}>
+                <Icon size={18} color={c.color} />
+              </div>
+              <div style={{ fontFamily: "'Fraunces', serif", fontWeight: 600, fontSize: 15.5 }}>{c.name}</div>
+              <div style={{ fontSize: 12.5, color: C.ink3, marginTop: 2 }}>{count} tarea(s)</div>
+            </Card>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+/* ============================================================
+   DASHBOARD
+   ============================================================ */
+function Dashboard({ tasks, projects }) {
+  const today = todayISO();
+  const pending = tasks.filter((t) => t.status !== "finalizada").length;
+  const done = tasks.filter((t) => t.status === "finalizada").length;
+  const overdue = tasks.filter(isOverdue).length;
+  const totalTimeMin = tasks.reduce((a, t) => a + (Number(t.actualDuration) || 0), 0);
+
+  const last7 = Array.from({ length: 7 }, (_, i) => addDays(today, i - 6));
+  const completionByDay = last7.map((d) => {
+    const dayTasks = tasks.filter((t) => t.date === d);
+    const completed = dayTasks.filter((t) => t.status === "finalizada").length;
+    return { day: d, total: dayTasks.length, completed, pct: dayTasks.length ? Math.round((completed / dayTasks.length) * 100) : 0 };
+  });
+
+  const weekTasks = tasks.filter((t) => t.date >= addDays(today, -6) && t.date <= today);
+  const weekPct = weekTasks.length ? Math.round((weekTasks.filter((t) => t.status === "finalizada").length / weekTasks.length) * 100) : 0;
+
+  const thisMonth = today.slice(0, 7);
+  const monthTasks = tasks.filter((t) => t.date && t.date.slice(0, 7) === thisMonth);
+  const monthPct = monthTasks.length ? Math.round((monthTasks.filter((t) => t.status === "finalizada").length / monthTasks.length) * 100) : 0;
+
+  const activeProjects = projects.filter((p) => tasks.some((t) => t.projectId === p.id && t.status !== "finalizada"));
+  const upcomingDeadlines = [...tasks].filter((t) => t.date >= today && t.status !== "finalizada").sort((a, b) => a.date.localeCompare(b.date)).slice(0, 5);
+
+  const byPriority = ["alta", "media", "baja"].map((k) => ({ k, count: tasks.filter((t) => t.priority === k && t.status !== "finalizada").length }));
+  const maxPriorityCount = Math.max(1, ...byPriority.map((p) => p.count));
+
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 22 }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px,1fr))", gap: 12 }}>
+        {[
+          { label: "Pendientes", value: pending, color: C.ink },
+          { label: "Finalizadas", value: done, color: C.baja },
+          { label: "Vencidas", value: overdue, color: C.alta },
+          { label: "Cumplimiento semanal", value: `${weekPct}%`, color: C.teal },
+          { label: "Cumplimiento mensual", value: `${monthPct}%`, color: C.mustard },
+          { label: "Tiempo invertido", value: durationLabel(totalTimeMin), color: C.ink },
+        ].map((s) => (
+          <Card key={s.label} style={{ padding: 16 }}>
+            <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 24, fontWeight: 600, color: s.color }}>{s.value}</div>
+            <div style={{ fontSize: 12, color: C.ink2, marginTop: 4 }}>{s.label}</div>
+          </Card>
+        ))}
+      </div>
+
+      <Card style={{ padding: 20 }}>
+        <div style={{ fontFamily: "'Fraunces', serif", fontSize: 17, fontWeight: 600, marginBottom: 16 }}>Cumplimiento — últimos 7 días</div>
+        <div style={{ display: "flex", alignItems: "flex-end", gap: 12, height: 140 }}>
+          {completionByDay.map((d) => (
+            <div key={d.day} style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", gap: 6 }}>
+              <div style={{ width: "100%", maxWidth: 34, height: 100, background: C.line, borderRadius: 8, display: "flex", alignItems: "flex-end", overflow: "hidden" }}>
+                <div style={{ width: "100%", height: `${d.pct}%`, background: d.day === today ? C.mustard : C.teal, transition: "height .4s" }} />
+              </div>
+              <span style={{ fontSize: 10.5, color: C.ink3, fontWeight: 600 }}>{WEEKDAYS[new Date(d.day + "T00:00:00").getDay()].slice(0, 3)}</span>
+            </div>
+          ))}
+        </div>
+      </Card>
+
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 16 }}>
+        <Card style={{ padding: 20 }}>
+          <div style={{ fontFamily: "'Fraunces', serif", fontSize: 17, fontWeight: 600, marginBottom: 14 }}>Pendientes por prioridad</div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+            {byPriority.map((p) => (
+              <div key={p.k} style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                <span style={{ width: 60, fontSize: 12.5, color: C.ink2 }}>{PRIORITIES[p.k].label}</span>
+                <div style={{ flex: 1 }}><ProgressBar value={(p.count / maxPriorityCount) * 100} color={PRIORITIES[p.k].color} /></div>
+                <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 12, width: 20, textAlign: "right" }}>{p.count}</span>
+              </div>
+            ))}
+          </div>
+        </Card>
+        <Card style={{ padding: 20 }}>
+          <div style={{ fontFamily: "'Fraunces', serif", fontSize: 17, fontWeight: 600, marginBottom: 14 }}>Proyectos activos ({activeProjects.length})</div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+            {activeProjects.length === 0 && <span style={{ fontSize: 13, color: C.ink3 }}>Ninguno por ahora</span>}
+            {activeProjects.map((p) => {
+              const pt = tasks.filter((t) => t.projectId === p.id);
+              const avg = pt.length ? Math.round(pt.reduce((a, t) => a + taskProgress(t), 0) / pt.length) : 0;
+              return (
+                <div key={p.id}>
+                  <div style={{ display: "flex", justifyContent: "space-between", fontSize: 13, marginBottom: 4 }}><span>{p.name}</span><span style={{ color: C.ink3 }}>{avg}%</span></div>
+                  <ProgressBar value={avg} color={p.color} />
+                </div>
+              );
+            })}
+          </div>
+        </Card>
+      </div>
+
+      <Card style={{ padding: 20 }}>
+        <div style={{ fontFamily: "'Fraunces', serif", fontSize: 17, fontWeight: 600, marginBottom: 14 }}>Próximos vencimientos</div>
+        {upcomingDeadlines.length === 0 ? <span style={{ fontSize: 13, color: C.ink3 }}>Nada pendiente en el horizonte cercano</span> :
+          <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+            {upcomingDeadlines.map((t) => (
+              <div key={t.id} style={{ display: "flex", justifyContent: "space-between", fontSize: 13.5, padding: "8px 0", borderBottom: `1px solid ${C.line}` }}>
+                <span>{t.title}</span><span style={{ color: C.ink3 }}>{fmtDateShort(t.date)}</span>
+              </div>
+            ))}
+          </div>}
+      </Card>
+    </div>
+  );
+}
+
+/* ============================================================
+   BÚSQUEDA
+   ============================================================ */
+function Buscar({ tasks, categories, projects, onOpenTask, onQuickStatus }) {
+  const [q, setQ] = useState("");
+  const results = useMemo(() => {
+    if (!q.trim()) return [];
+    const lower = q.toLowerCase();
+    const today = todayISO();
+    let pool = tasks;
+
+    if (/vencid/i.test(lower)) pool = pool.filter(isOverdue);
+    if (/alta prioridad|prioridad alta/i.test(lower)) pool = pool.filter((t) => t.priority === "alta");
+    if (/media prioridad|prioridad media/i.test(lower)) pool = pool.filter((t) => t.priority === "media");
+    if (/baja prioridad|prioridad baja/i.test(lower)) pool = pool.filter((t) => t.priority === "baja");
+    if (/pendiente/i.test(lower)) pool = pool.filter((t) => t.status === "pendiente");
+    if (/finaliza|complet/i.test(lower)) pool = pool.filter((t) => t.status === "finalizada");
+    if (/próxima semana|proxima semana/i.test(lower)) pool = pool.filter((t) => t.date >= today && t.date <= addDays(today, 7));
+    if (/esta semana/i.test(lower)) pool = pool.filter((t) => t.date >= addDays(today, -new Date().getDay()) && t.date <= addDays(today, 6 - new Date().getDay()));
+    if (/hoy/i.test(lower)) pool = pool.filter((t) => t.date === today);
+    if (/reuni/i.test(lower)) pool = pool.filter((t) => /reuni/i.test(t.title) || t.modality === "virtual");
+
+    const monthIdx = MONTHS.findIndex((m) => lower.includes(m.toLowerCase()));
+    if (monthIdx >= 0) pool = pool.filter((t) => t.date && new Date(t.date + "T00:00:00").getMonth() === monthIdx);
+
+    const proj = projects.find((p) => lower.includes(p.name.toLowerCase()));
+    if (proj) pool = pool.filter((t) => t.projectId === proj.id);
+
+    const words = lower.replace(/(vencid\w*|alta prioridad|prioridad alta|media prioridad|prioridad media|baja prioridad|prioridad baja|pendiente\w*|finaliza\w*|complet\w*|próxima semana|proxima semana|esta semana|hoy|reuni\w*|todo lo relacionado con|el proyecto)/gi, "").trim();
+    if (words.length > 1) {
+      pool = pool.filter((t) => (t.title + " " + t.description + " " + (t.tags || []).join(" ")).toLowerCase().includes(words));
+    }
+    return pool;
+  }, [q, tasks, projects]);
+
+  const suggestions = ["Tareas de agosto", "Reuniones de la próxima semana", "Tareas pendientes de prioridad alta", "Tareas vencidas"];
+
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
+      <div style={{ position: "relative" }}>
+        <Search size={17} style={{ position: "absolute", left: 14, top: 13, color: C.ink3 }} />
+        <TextInput value={q} onChange={(e) => setQ(e.target.value)} placeholder="Busca en lenguaje natural… (ej. “tareas pendientes de prioridad alta”)" style={{ paddingLeft: 40, width: "100%", fontSize: 16 }} />
+      </div>
+      {!q && (
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+          {suggestions.map((s) => <button key={s} onClick={() => setQ(s)} style={{ border: `1px solid ${C.line}`, background: "#fff", borderRadius: 999, padding: "7px 14px", fontSize: 13, cursor: "pointer", color: C.ink2 }}>{s}</button>)}
+        </div>
+      )}
+      {q && (
+        results.length === 0 ? <Empty icon={Search} title="Sin resultados" hint="Prueba con otras palabras o filtros." /> :
+          <TaskList tasks={results} categories={categories} projects={projects} allTasks={tasks} onOpen={onOpenTask} onQuickStatus={onQuickStatus} />
+      )}
+    </div>
+  );
+}
+
+/* ============================================================
+   AJUSTES (PIN)
+   ============================================================ */
+function Ajustes({ pin, setPin, greetingName, setGreetingName, onResetData, notifStatus, onRequestNotif }) {
+  const [newPin, setNewPin] = useState("");
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 20, maxWidth: 440 }}>
+      <Card style={{ padding: 20 }}>
+        <div style={{ fontFamily: "'Fraunces', serif", fontSize: 17, fontWeight: 600, marginBottom: 6 }}>Tu nombre</div>
+        <div style={{ fontSize: 13, color: C.ink2, marginBottom: 10 }}>Se usa en el saludo de "Mi día".</div>
+        <TextInput value={greetingName} onChange={(e) => setGreetingName(e.target.value)} placeholder="Tu nombre" />
+      </Card>
+      <Card style={{ padding: 20 }}>
+        <div style={{ fontFamily: "'Fraunces', serif", fontSize: 17, fontWeight: 600, marginBottom: 6, display: "flex", alignItems: "center", gap: 8 }}><Clock size={16} /> Notificaciones de recordatorios</div>
+        <div style={{ fontSize: 13, color: C.ink2, marginBottom: 12 }}>
+          {notifStatus === "granted" && "Activas: recibirás un aviso cuando llegue la hora de un recordatorio, mientras tengas esta pestaña o app abierta (aunque esté en segundo plano)."}
+          {notifStatus === "denied" && "Bloqueadas. Actívalas desde los permisos del navegador para este sitio."}
+          {notifStatus === "unsupported" && "Este navegador no admite notificaciones aquí."}
+          {(notifStatus === "default" || !notifStatus) && "Aún no activadas. Solo funcionan mientras la app siga abierta (en segundo plano vale), no si la cierras del todo."}
+        </div>
+        {(notifStatus === "default" || !notifStatus) && <Btn variant="subtle" onClick={onRequestNotif}>Activar notificaciones</Btn>}
+      </Card>
+      <Card style={{ padding: 20 }}>
+        <div style={{ fontFamily: "'Fraunces', serif", fontSize: 17, fontWeight: 600, marginBottom: 6, display: "flex", alignItems: "center", gap: 8 }}><Lock size={16} /> Bloqueo por PIN</div>
+        <div style={{ fontSize: 13, color: C.ink2, marginBottom: 12 }}>
+          {pin ? "El PIN está activo. Se pedirá al abrir la aplicación." : "Sin PIN configurado."}
+        </div>
+        <div style={{ display: "flex", gap: 8 }}>
+          <TextInput value={newPin} onChange={(e) => setNewPin(e.target.value.replace(/\D/g, "").slice(0, 4))} placeholder="4 dígitos" style={{ width: 120 }} />
+          <Btn variant="subtle" onClick={() => { if (newPin.length === 4) { setPin(newPin); setNewPin(""); } }}>Guardar PIN</Btn>
+          {pin && <Btn variant="ghost" onClick={() => setPin("")}>Quitar PIN</Btn>}
+        </div>
+      </Card>
+      <Card style={{ padding: 20 }}>
+        <div style={{ fontFamily: "'Fraunces', serif", fontSize: 17, fontWeight: 600, marginBottom: 6 }}>Datos</div>
+        <div style={{ fontSize: 13, color: C.ink2, marginBottom: 12 }}>Los datos se guardan automáticamente en este dispositivo/cuenta.</div>
+        <Btn variant="danger" onClick={onResetData}><Trash2 size={15} /> Borrar todos los datos</Btn>
+      </Card>
+      <Card style={{ padding: 20, background: C.tealSoft, border: "none" }}>
+        <div style={{ fontSize: 13, color: C.tealDark, lineHeight: 1.6 }}>
+          <strong>Nota sobre este prototipo:</strong> es una aplicación web. No incluye apps nativas de iOS/Android, widget de pantalla de inicio, ni reconocimiento de voz — el alta rápida interpreta lenguaje natural escrito como aproximación. Las notificaciones de arriba solo llegan mientras la app sigue abierta (aunque sea en segundo plano); para notificaciones reales con la app completamente cerrada hace falta la versión independiente con Firebase.
+        </div>
+      </Card>
+    </div>
+  );
+}
+
+/* ============================================================
+   PIN LOCK SCREEN
+   ============================================================ */
+function LockScreen({ pin, onUnlock }) {
+  const [val, setVal] = useState("");
+  const [error, setError] = useState(false);
+  const submit = () => { if (val === pin) onUnlock(); else { setError(true); setVal(""); setTimeout(() => setError(false), 900); } };
+  return (
+    <div style={{ position: "fixed", inset: 0, background: C.tealDark, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 18, zIndex: 100 }}>
+      <style>{FONT_IMPORT}</style>
+      <Lock size={30} color="#fff" style={{ opacity: .8 }} />
+      <div style={{ fontFamily: "'Fraunces', serif", fontSize: 22, color: "#fff" }}>Introduce tu PIN</div>
+      <input autoFocus type="password" inputMode="numeric" maxLength={4} value={val}
+        onChange={(e) => setVal(e.target.value.replace(/\D/g, "").slice(0, 4))}
+        onKeyDown={(e) => e.key === "Enter" && submit()}
+        style={{ fontSize: 28, letterSpacing: 12, textAlign: "center", width: 160, padding: "10px 0", borderRadius: 12, border: "none", fontFamily: "'IBM Plex Mono', monospace" }} />
+      {error && <div style={{ color: "#F3B4A6", fontSize: 13 }}>PIN incorrecto</div>}
+      <Btn onClick={submit} disabled={val.length !== 4}>Entrar</Btn>
+    </div>
+  );
+}
+
+/* ============================================================
+   NAV
+   ============================================================ */
+const NAV_ITEMS = [
+  { id: "mi-dia", label: "Mi día", icon: Home },
+  { id: "agenda", label: "Agenda", icon: CalendarDays },
+  { id: "proyectos", label: "Proyectos", icon: FolderKanban },
+  { id: "categorias", label: "Categorías", icon: Tag },
+  { id: "dashboard", label: "Dashboard", icon: BarChart3 },
+  { id: "buscar", label: "Buscar", icon: Search },
+  { id: "ajustes", label: "Ajustes", icon: Settings },
+];
+
+/* ============================================================
+   ROOT APP
+   ============================================================ */
+function App() {
+  const [loaded, setLoaded] = useState(false);
+  const [tasks, setTasks] = useState([]);
+  const [projects, setProjects] = useState([]);
+  const [categories, setCategories] = useState(DEFAULT_CATEGORIES);
+  const [pin, setPin] = useState("");
+  const [greetingName, setGreetingName] = useState("");
+  const [unlocked, setUnlocked] = useState(false);
+
+  const [view, setView] = useState("mi-dia");
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(() => (typeof window !== "undefined" ? window.innerWidth <= 820 : false));
+  const isMobile = useIsMobile();
+  const [taskModal, setTaskModal] = useState(null); // {} new, {...} edit, null closed
+  const [projectModal, setProjectModal] = useState(null);
+  const [categoryModal, setCategoryModal] = useState(null);
+  const [quickAdd, setQuickAdd] = useState("");
+  const [notifStatus, setNotifStatus] = useState(() => (typeof Notification !== "undefined" ? Notification.permission : "unsupported"));
+  const firedRemindersRef = useRef(new Set());
+
+  const requestNotifPermission = async () => {
+    if (typeof Notification === "undefined") { setNotifStatus("unsupported"); return; }
+    try {
+      const perm = await Notification.requestPermission();
+      setNotifStatus(perm);
+    } catch (e) { setNotifStatus("unsupported"); }
+  };
+
+  useEffect(() => {
+    if (!loaded) return;
+    const check = () => {
+      const due = getUpcomingReminderTriggers(tasks).filter((x) => x.trigger <= Date.now());
+      due.forEach(({ task, reminder }) => {
+        const key = task.id + ":" + reminder.id;
+        if (firedRemindersRef.current.has(key)) return;
+        firedRemindersRef.current.add(key);
+        if (typeof Notification !== "undefined" && Notification.permission === "granted") {
+          try {
+            new Notification("Recordatorio: " + task.title, {
+              body: `${reminderLabel(reminder.minutes)}${task.location ? ` · ${task.location}` : ""}`,
+              tag: key,
+            });
+          } catch (e) { /* entorno sin soporte de notificaciones */ }
+        }
+      });
+    };
+    check();
+    const id = setInterval(check, 30000);
+    return () => clearInterval(id);
+  }, [tasks, loaded]);
+
+  useEffect(() => {
+    (async () => {
+      const data = await loadData();
+      if (data) {
+        setTasks(data.tasks || []);
+        setProjects(data.projects || []);
+        setCategories(data.categories && data.categories.length ? data.categories : DEFAULT_CATEGORIES);
+        setPin(data.pin || "");
+        setGreetingName(data.greetingName || "");
+        if (typeof data.sidebarCollapsed === "boolean") setSidebarCollapsed(data.sidebarCollapsed);
+      }
+      setLoaded(true);
+    })();
+  }, []);
+
+  useEffect(() => {
+    if (!loaded) return;
+    const t = setTimeout(() => saveData({ tasks, projects, categories, pin, greetingName, sidebarCollapsed }), 350);
+    return () => clearTimeout(t);
+  }, [tasks, projects, categories, pin, greetingName, sidebarCollapsed, loaded]);
+
+  const saveTask = (t) => { setTasks((prev) => prev.some((x) => x.id === t.id) ? prev.map((x) => (x.id === t.id ? t : x)) : [...prev, t]); setTaskModal(null); };
+  const deleteTask = (id) => { setTasks((prev) => prev.filter((x) => x.id !== id)); setTaskModal(null); };
+  const quickStatus = (id, status) => setTasks((prev) => prev.map((t) => (t.id === id ? { ...t, status } : t)));
+
+  const saveProject = (p) => { setProjects((prev) => prev.some((x) => x.id === p.id) ? prev.map((x) => (x.id === p.id ? p : x)) : [...prev, p]); setProjectModal(null); };
+  const deleteProject = (id) => { setProjects((prev) => prev.filter((x) => x.id !== id)); setTasks((prev) => prev.map((t) => (t.projectId === id ? { ...t, projectId: "" } : t))); setProjectModal(null); };
+
+  const saveCategory = (c) => { setCategories((prev) => prev.some((x) => x.id === c.id) ? prev.map((x) => (x.id === c.id ? c : x)) : [...prev, c]); setCategoryModal(null); };
+  const deleteCategory = (id) => { setCategories((prev) => prev.filter((x) => x.id !== id)); setTasks((prev) => prev.map((t) => ({ ...t, categoryIds: (t.categoryIds || []).filter((x) => x !== id) }))); setCategoryModal(null); };
+
+  const resetData = () => { if (window.confirm && !window.confirm) return; setTasks([]); setProjects([]); setCategories(DEFAULT_CATEGORIES); };
+
+  const [quickAddToast, setQuickAddToast] = useState("");
+  const handleQuickAdd = () => {
+    try {
+      if (!quickAdd.trim()) { setQuickAddToast("Escribe algo primero"); setTimeout(() => setQuickAddToast(""), 1600); return; }
+      let parsed;
+      try { parsed = parseQuickAdd(quickAdd); } catch (e) { parsed = { title: quickAdd, date: todayISO(), startTime: "" }; }
+      const newTask = { ...emptyTask(), title: parsed.title, date: parsed.date, startTime: parsed.startTime };
+      setTasks((prev) => [...prev, newTask]);
+      setQuickAdd("");
+      setQuickAddToast(`✓ Agregada: "${newTask.title}"`);
+      setTimeout(() => setQuickAddToast(""), 2200);
+    } catch (err) {
+      setQuickAddToast("No se pudo agregar — inténtalo de nuevo");
+      setTimeout(() => setQuickAddToast(""), 2200);
+    }
+  };
+
+  if (!loaded) {
+    return <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: C.bg, color: C.ink2, fontFamily: "Inter, sans-serif" }}>Cargando…</div>;
+  }
+
+  if (pin && !unlocked) return <LockScreen pin={pin} onUnlock={() => setUnlocked(true)} />;
+
+  const viewProps = { tasks, categories, projects, onOpenTask: (t) => setTaskModal(t), onQuickStatus: quickStatus };
+
+  return (
+    <div style={{ minHeight: "100vh", background: C.bg, fontFamily: "Inter, sans-serif", color: C.ink, display: "flex", overflowX: "hidden" }}>
+      <style>{FONT_IMPORT + `
+        * { box-sizing: border-box; }
+        ::selection { background: ${C.tealSoft}; }
+        button, a { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+        button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid ${C.teal}; outline-offset: 2px; }
+        @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+      `}</style>
+
+      {/* Sidebar / panel de navegación */}
+      {isMobile && !sidebarCollapsed && (
+        <div onClick={() => setSidebarCollapsed(true)} style={{ position: "fixed", inset: 0, background: "rgba(30,42,46,0.35)", zIndex: 19 }} />
+      )}
+      <div className="sidebar-nav" style={{
+        width: sidebarCollapsed ? 68 : 220, borderRight: `1px solid ${C.line}`, padding: sidebarCollapsed ? "24px 10px" : "24px 16px",
+        display: "flex", flexDirection: "column", gap: 4, flexShrink: 0, transition: "width .18s, padding .18s",
+        ...(isMobile && !sidebarCollapsed
+          ? { position: "fixed", top: 0, left: 0, bottom: 0, zIndex: 20, background: C.bg, boxShadow: "0 0 24px rgba(0,0,0,.18)" }
+          : { position: "relative" }),
+      }}>
+        <button
+          onClick={() => setSidebarCollapsed((v) => !v)}
+          title={sidebarCollapsed ? "Expandir menú" : "Replegar menú"}
+          style={{
+            position: "absolute", top: 20, right: -12, width: 24, height: 24, borderRadius: 999,
+            border: `1px solid ${C.line}`, background: "#fff", color: C.ink2, cursor: "pointer",
+            display: "flex", alignItems: "center", justifyContent: "center", zIndex: 6, boxShadow: "0 1px 4px rgba(0,0,0,.08)",
+          }}
+        >
+          {sidebarCollapsed ? <ChevronRight size={14} /> : <ChevronLeft size={14} />}
+        </button>
+
+        <div style={{ display: "flex", alignItems: "center", gap: 8, padding: sidebarCollapsed ? "0" : "0 8px", marginBottom: 22, justifyContent: sidebarCollapsed ? "center" : "flex-start" }}>
+          <div style={{ width: 30, height: 30, borderRadius: 9, background: C.teal, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}><CalendarClock size={16} color="#fff" /></div>
+          {!sidebarCollapsed && <span style={{ fontFamily: "'Fraunces', serif", fontSize: 18, fontWeight: 600, whiteSpace: "nowrap" }}>Mi Agenda</span>}
+        </div>
+        {NAV_ITEMS.map((it) => (
+          <button key={it.id} onClick={() => { setView(it.id); if (isMobile) setSidebarCollapsed(true); }} title={sidebarCollapsed ? it.label : undefined} style={{
+            display: "flex", alignItems: "center", gap: 10, padding: sidebarCollapsed ? "10px 0" : "10px 12px", borderRadius: 10, border: "none", cursor: "pointer",
+            background: view === it.id ? C.tealSoft : "transparent", color: view === it.id ? C.tealDark : C.ink2, fontSize: 14, fontWeight: 600, textAlign: "left",
+            justifyContent: sidebarCollapsed ? "center" : "flex-start",
+          }}>
+            <it.icon size={17} /> {!sidebarCollapsed && it.label}
+          </button>
+        ))}
+        <div style={{ marginTop: "auto", paddingTop: 16 }}>
+          <Btn onClick={() => { setTaskModal({}); if (isMobile) setSidebarCollapsed(true); }} title={sidebarCollapsed ? "Nueva tarea" : undefined} style={{ width: "100%", justifyContent: "center", padding: sidebarCollapsed ? "10px 0" : undefined }}>
+            <Plus size={16} /> {!sidebarCollapsed && "Nueva tarea"}
+          </Btn>
+        </div>
+      </div>
+
+      <div style={{ flex: 1, minWidth: 0, display: "flex", flexDirection: "column" }}>
+        <div className="quickadd-bar" style={{ padding: "20px 28px 0", background: C.bg }}>
+          <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
+            <TextInput value={quickAdd} onChange={(e) => setQuickAdd(e.target.value)} onKeyDown={(e) => e.key === "Enter" && handleQuickAdd()}
+              placeholder='Alta rápida — ej. "Reunión con Secretaría de Salud el martes a las 9am"' style={{ flex: "1 1 200px", minWidth: 0, fontSize: 16 }} />
+            <Btn onClick={handleQuickAdd} style={{ flexShrink: 0 }}><Plus size={15} /> Agregar</Btn>
+          </div>
+          {quickAddToast && (
+            <div style={{ marginTop: 8, fontSize: 13, fontWeight: 600, color: quickAddToast.startsWith("✓") ? C.baja : C.alta, display: "flex", alignItems: "center", gap: 6 }}>
+              {quickAddToast}
+            </div>
+          )}
+        </div>
+
+        <div className="main-content" style={{ padding: "22px 28px 100px", flex: 1 }}>
+          {view === "mi-dia" && <MiDia {...viewProps} greetingName={greetingName} />}
+          {view === "agenda" && <Agenda {...viewProps} />}
+          {view === "proyectos" && <Proyectos projects={projects} tasks={tasks} categories={categories} onOpenProject={(p) => setProjectModal(p)} onNewProject={() => setProjectModal({})} onOpenTask={(t) => setTaskModal(t)} onQuickStatus={quickStatus} />}
+          {view === "categorias" && <Categorias categories={categories} tasks={tasks} onOpenCategory={(c) => setCategoryModal(c)} onNewCategory={() => setCategoryModal({})} />}
+          {view === "dashboard" && <Dashboard tasks={tasks} projects={projects} />}
+          {view === "buscar" && <Buscar {...viewProps} />}
+          {view === "ajustes" && <Ajustes pin={pin} setPin={setPin} greetingName={greetingName} setGreetingName={setGreetingName} onResetData={resetData} notifStatus={notifStatus} onRequestNotif={requestNotifPermission} />}
+        </div>
+      </div>
+
+      {/* Botón flotante de nueva tarea (solo móvil) */}
+      <button onClick={() => setTaskModal({})} className="fab" style={{ display: "none" }} title="Nueva tarea" aria-label="Nueva tarea"><Plus size={22} color="#fff" /></button>
+
+      <style>{`
+        @media (max-width: 820px) {
+          .main-content { padding: 16px 14px 90px !important; }
+          .quickadd-bar { padding: 14px 14px 0 !important; }
+          .modal-pad { padding: 14px 16px !important; }
+          .fab { display: flex !important; position: fixed; bottom: 20px; right: 18px; width: 54px; height: 54px; border-radius: 999px; background: ${C.teal}; border: none; align-items: center; justify-content: center; box-shadow: 0 6px 20px rgba(31,92,87,.35); cursor: pointer; z-index: 15; }
+        }
+        @media (max-width: 480px) {
+          .main-content { padding: 14px 10px 90px !important; }
+          .quickadd-bar { padding: 12px 10px 0 !important; }
+          .modal-pad { padding: 12px 14px !important; }
+        }
+      `}</style>
+
+      {taskModal !== null && <TaskModal task={taskModal} categories={categories} projects={projects} allTasks={tasks} onSave={saveTask} onDelete={deleteTask} onClose={() => setTaskModal(null)} />}
+      {projectModal !== null && <ProjectModal project={projectModal} tasks={tasks} onSave={saveProject} onDelete={deleteProject} onClose={() => setProjectModal(null)} />}
+      {categoryModal !== null && <CategoryModal category={categoryModal} onSave={saveCategory} onDelete={deleteCategory} onClose={() => setCategoryModal(null)} />}
+    </div>
+  );
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
+
+  </script>
+</body>
+</html>
