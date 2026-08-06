@@ -40,7 +40,8 @@
   appId: "1:643635795744:web:25be3fff008c22fd69e945"
 };
     firebase.initializeApp(firebaseConfig);
-    const db = firebase.firestore();
+    window.db = firebase.firestore();
+    console.log("Firebase inicializado, window.db listo");
   </script>
   <script type="text/babel" data-type="module">
 const { useState, useEffect, useMemo, useRef, useCallback } = React;
@@ -392,25 +393,35 @@ const STORE_KEY = "mi-agenda:data:v1";
 const FIREBASE_DOC = "user1";
 
 async function loadData() {
-  // 1. Intentar cargar desde Firestore primero
+  // Esperar a que Firebase esté listo (hasta 3 segundos)
+  for (let i = 0; i < 30; i++) {
+    if (typeof window.db !== "undefined" && window.db) break;
+    await new Promise(r => setTimeout(r, 100));
+  }
+
+  // 1. Intentar cargar desde Firestore
   try {
-    if (typeof db !== "undefined" && db) {
-      const doc = await db.collection("agenda").doc(FIREBASE_DOC).get();
+    if (typeof window.db !== "undefined" && window.db) {
+      const doc = await window.db.collection("agenda").doc(FIREBASE_DOC).get();
       if (doc.exists) {
         const data = doc.data();
-        // Guardar backup en localStorage
+        console.log("✅ Datos cargados desde Firebase");
         try { localStorage.setItem(STORE_KEY, JSON.stringify(data)); } catch (e) {}
         return data;
       }
     }
-  } catch (e) { console.log("Firestore no disponible, usando localStorage"); }
+  } catch (e) { console.log("Firestore no disponible, usando localStorage", e); }
 
   // 2. Fallback a localStorage
   try {
     const raw = localStorage.getItem(STORE_KEY);
-    if (raw) return JSON.parse(raw);
+    if (raw) {
+      console.log("✅ Datos cargados desde localStorage");
+      return JSON.parse(raw);
+    }
   } catch (e) {}
 
+  console.log("ℹ️ Primera vez: sin datos previos");
   return null;
 }
 
@@ -423,10 +434,11 @@ async function saveData(data) {
 
   // 2. Guardar en Firestore
   try {
-    if (typeof db !== "undefined" && db) {
-      await db.collection("agenda").doc(FIREBASE_DOC).set(cleanData);
+    if (typeof window.db !== "undefined" && window.db) {
+      await window.db.collection("agenda").doc(FIREBASE_DOC).set(cleanData);
+      console.log("✅ Guardado en Firebase");
     }
-  } catch (e) { console.error("No se pudo guardar en Firebase", e); }
+  } catch (e) { console.error("❌ No se pudo guardar en Firebase", e); }
 }
 
 /* ============================================================
