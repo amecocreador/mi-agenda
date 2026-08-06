@@ -41,43 +41,6 @@
 };
     firebase.initializeApp(firebaseConfig);
     const db = firebase.firestore();
-
-    (function() {
-      const swCode = `const CACHE_NAME = 'mi-agenda-v1';
-const URLS_TO_CACHE = ['./'];
-
-self.addEventListener('install', (event) => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(URLS_TO_CACHE))
-  );
-  self.skipWaiting();
-});
-
-self.addEventListener('activate', (event) => {
-  event.waitUntil(self.clients.claim());
-});
-
-self.addEventListener('fetch', (event) => {
-  event.respondWith(
-    caches.match(event.request).then((response) => {
-      if (response) return response;
-      return fetch(event.request).catch(() => {
-        if (event.request.mode === 'navigate') {
-          return caches.match('./');
-        }
-      });
-    })
-  );
-});
-`;
-      const swBlob = new Blob([swCode], { type: 'application/javascript' });
-      const swUrl = URL.createObjectURL(swBlob);
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register(swUrl).catch(() => {});
-        });
-      }
-    })();
   </script>
   <script type="text/babel" data-type="module">
 const { useState, useEffect, useMemo, useRef, useCallback } = React;
@@ -428,41 +391,42 @@ function parseQuickAdd(text) {
 const STORE_KEY = "mi-agenda:data:v1";
 const FIREBASE_DOC = "user1";
 
-function loadData() {
-  return new Promise((resolve) => {
-    try {
-      const raw = localStorage.getItem(STORE_KEY);
-      if (raw) { resolve(JSON.parse(raw)); return; }
-    } catch (e) {}
-    resolve(null);
-  });
-}
-
-function saveData(data) {
-  return new Promise((resolve) => {
-    try {
-      localStorage.setItem(STORE_KEY, JSON.stringify(data));
-      // También guardar en Firestore si está disponible
-      if (typeof db !== "undefined" && db) {
-        db.collection("agenda").doc(FIREBASE_DOC).set(data).catch(() => {});
-      }
-    } catch (e) { console.error("No se pudo guardar", e); }
-    resolve();
-  });
-}
-
-async function loadDataFromCloud() {
+async function loadData() {
+  // 1. Intentar cargar desde Firestore primero
   try {
     if (typeof db !== "undefined" && db) {
       const doc = await db.collection("agenda").doc(FIREBASE_DOC).get();
       if (doc.exists) {
         const data = doc.data();
-        localStorage.setItem(STORE_KEY, JSON.stringify(data));
+        // Guardar backup en localStorage
+        try { localStorage.setItem(STORE_KEY, JSON.stringify(data)); } catch (e) {}
         return data;
       }
     }
+  } catch (e) { console.log("Firestore no disponible, usando localStorage"); }
+
+  // 2. Fallback a localStorage
+  try {
+    const raw = localStorage.getItem(STORE_KEY);
+    if (raw) return JSON.parse(raw);
   } catch (e) {}
+
   return null;
+}
+
+async function saveData(data) {
+  // Limpiar undefined values para Firestore
+  const cleanData = JSON.parse(JSON.stringify(data));
+
+  // 1. Guardar en localStorage (siempre funciona)
+  try { localStorage.setItem(STORE_KEY, JSON.stringify(cleanData)); } catch (e) {}
+
+  // 2. Guardar en Firestore
+  try {
+    if (typeof db !== "undefined" && db) {
+      await db.collection("agenda").doc(FIREBASE_DOC).set(cleanData);
+    }
+  } catch (e) { console.error("No se pudo guardar en Firebase", e); }
 }
 
 /* ============================================================
